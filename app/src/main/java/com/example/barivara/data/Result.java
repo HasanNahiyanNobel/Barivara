@@ -1,4 +1,4 @@
-package com.example.nobeltest5.data;
+package com.example.barivara.data;
 
 /**
  * A generic class that holds a result success w/ data or an error exception.

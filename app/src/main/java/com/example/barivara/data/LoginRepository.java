@@ -1,6 +1,6 @@
-package com.example.nobeltest5.data;
+package com.example.barivara.data;
 
-import com.example.nobeltest5.data.model.LoggedInUser;
+import com.example.barivara.data.model.LoggedInUser;
 
 /**
  * Class that requests authentication and user information from the remote data source and

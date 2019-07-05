@@ -1,4 +1,4 @@
-package com.example.nobeltest5.ui.login;
+package com.example.barivara.ui.login;
 
 import android.app.Activity;
 
@@ -22,9 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.nobeltest5.R;
-import com.example.nobeltest5.ui.login.LoginViewModel;
-import com.example.nobeltest5.ui.login.LoginViewModelFactory;
+import com.example.barivara.R;
 
 public class LoginActivity extends AppCompatActivity {
 

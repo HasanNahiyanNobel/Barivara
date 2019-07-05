@@ -1,4 +1,4 @@
-package com.example.nobeltest5;
+package com.example.barivara;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
 		// Context of the app under test.
 		Context appContext = InstrumentationRegistry.getTargetContext();
 
-		assertEquals("com.example.nobeltest5", appContext.getPackageName());
+		assertEquals("com.example.barivara", appContext.getPackageName());
 	}
 }

@@ -1,4 +1,4 @@
-package com.example.nobeltest5.data.model;
+package com.example.barivara.data.model;
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository

@@ -1,4 +1,4 @@
-package com.example.nobeltest5.ui.login;
+package com.example.barivara.ui.login;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -6,10 +6,10 @@ import androidx.lifecycle.ViewModel;
 
 import android.util.Patterns;
 
-import com.example.nobeltest5.data.LoginRepository;
-import com.example.nobeltest5.data.Result;
-import com.example.nobeltest5.data.model.LoggedInUser;
-import com.example.nobeltest5.R;
+import com.example.barivara.data.LoginRepository;
+import com.example.barivara.data.Result;
+import com.example.barivara.data.model.LoggedInUser;
+import com.example.barivara.R;
 
 public class LoginViewModel extends ViewModel {
 

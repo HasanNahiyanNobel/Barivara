@@ -1,6 +1,6 @@
-package com.example.nobeltest5.data;
+package com.example.barivara.data;
 
-import com.example.nobeltest5.data.model.LoggedInUser;
+import com.example.barivara.data.model.LoggedInUser;
 
 import java.io.IOException;
 
