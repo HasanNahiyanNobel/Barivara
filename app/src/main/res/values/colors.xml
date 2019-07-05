@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#008577</color>
+	<color name="colorPrimaryDark">#00574B</color>
+	<color name="colorAccent">#D81B60</color>-->
+	<color name="colorPrimary">#70C1B3</color>
+	<color name="colorPrimaryDark">#1B5775</color>
+	<color name="colorAccent">#FF1654</color>
+	<!--<color name="seaBlue">#05668D</color>
+    <color name="metallicSeaweed">#028090</color>
+    <color name="persianGreen">#00A896</color>
+    <color name="caribbeanGreen">#02C39A</color>
+    <color name="paleSpringBud">#F0F3BD</color>-->
+	<color name="lapisLazuli">#247BA0</color>
+	<color name="greenSheen">#70C1B3</color>
+	<color name="seaFoamGreen">#B2DBBF</color>
+	<color name="veryPaleYellow">#F3FFBD</color>
+	<color name="awesomeRed">#FF1654</color>
+</resources>
