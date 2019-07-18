@@ -14,4 +14,15 @@
 	<string name="invalid_username">Not a valid username</string>
 	<string name="invalid_password">Password must be >5 characters</string>
 	<string name="login_failed">"Login failed"</string>
+	<string name="button_ok">ঠিক আছে</string>
+	<string name="houseInfo">বাসা সম্পর্কিত তথ্য</string>
+	<string name="amountOfRent">ভাড়ার পরিমাণ</string>
+	<string name="bedrooms">শোবার ঘর</string>
+	<string name="doesExist">আছে</string>
+	<string name="button_next_page">পরবর্তী পৃষ্ঠা</string>
+	<string name="numberOfAttachedBaths">এ্যাটাচড বাথরুমের সংখ্যা</string>
+	<string name="numberOfOtherBaths">অন্যান্য বাথরুমের সংখ্যা</string>
+	<string name="rentAmount">বাড়িভাড়া</string>
+	<string name="diningRoom">খাবার ঘর</string>
+	<string name="cookingRoom">রান্নাঘর</string>
 </resources>
