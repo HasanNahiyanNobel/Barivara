@@ -13,10 +13,10 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		listenButtons();
+		//listenButtonsOld();
 	}
 
-	public void listenButtons() {
+	public void listenButtonsOld() {
 		/*final Context CONTEXT = this;
 		Button button = (Button) findViewById(R.id.button1);
 		button.setOnClickListener(new View.OnClickListener() {
@@ -26,5 +26,10 @@ public class MainActivity extends AppCompatActivity {
 				startActivity(intent);
 			}
 		});*/
+	}
+
+	public void goToLandlordMain (View view) {
+		Intent intent = new Intent(this,LandlordMainPage.class);
+		startActivity(intent);
 	}
 }

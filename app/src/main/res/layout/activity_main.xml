@@ -7,24 +7,41 @@
 	android:background="@color/veryPaleYellow"
 	tools:context=".MainActivity">
 
-	<Button
-		android:id="@+id/button2"
-		android:layout_width="280dp"
-		android:layout_height="140dp"
+	<LinearLayout
+		android:id="@+id/linearLayout1"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
 		android:layout_marginStart="8dp"
 		android:layout_marginLeft="8dp"
-		android:layout_marginTop="108dp"
+		android:layout_marginTop="8dp"
 		android:layout_marginEnd="8dp"
 		android:layout_marginRight="8dp"
-		android:drawableStart="@drawable/ic_landlord_1"
-		android:drawableLeft="@drawable/ic_landlord_1"
-		android:text="@string/bariwala"
+		android:layout_marginBottom="8dp"
+		android:clickable="true"
+		android:gravity="center"
+		android:onClick="goToLandlordMain"
+		android:orientation="vertical"
+		app:layout_constraintBottom_toTopOf="@+id/linearLayout"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.495"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
+		app:layout_constraintTop_toTopOf="parent">
+
+		<ImageView
+			android:id="@+id/imageView"
+			android:layout_width="200dp"
+			android:layout_height="200dp"
+			app:srcCompat="@drawable/ic_landlord_1" />
+
+		<TextView
+			android:id="@+id/textView15"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/bariwala"
+			android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+	</LinearLayout>
 
 	<LinearLayout
+		android:id="@+id/linearLayout"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="8dp"
@@ -32,6 +49,7 @@
 		android:layout_marginEnd="8dp"
 		android:layout_marginRight="8dp"
 		android:layout_marginBottom="150dp"
+		android:clickable="true"
 		android:gravity="center"
 		android:orientation="vertical"
 		app:layout_constraintBottom_toBottomOf="parent"
