@@ -16,8 +16,18 @@ public class MainActivity extends AppCompatActivity {
 		//listenButtonsOld();
 	}
 
-	public void listenButtonsOld() {
-		/*final Context CONTEXT = this;
+	public void goToLandlordMain (View view) {
+		Intent intent = new Intent(this,LandlordMainPage.class);
+		startActivity(intent);
+	}
+
+	public void goToRenterMain (View view) {
+		Intent intent = new Intent(this,RenterMainPage.class);
+		startActivity(intent);
+	}
+
+	/*public void listenButtonsOld() {
+		*//*final Context CONTEXT = this;
 		Button button = (Button) findViewById(R.id.button1);
 		button.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -25,11 +35,6 @@ public class MainActivity extends AppCompatActivity {
 				Intent intent = new Intent(CONTEXT, LandlordMainPage.class);
 				startActivity(intent);
 			}
-		});*/
-	}
-
-	public void goToLandlordMain (View view) {
-		Intent intent = new Intent(this,LandlordMainPage.class);
-		startActivity(intent);
-	}
+		});*//*
+	}*/
 }
