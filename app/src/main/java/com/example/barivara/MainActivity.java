@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void listenButtons() {
-		final Context CONTEXT = this;
+		/*final Context CONTEXT = this;
 		Button button = (Button) findViewById(R.id.button1);
 		button.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -25,6 +25,6 @@ public class MainActivity extends AppCompatActivity {
 				Intent intent = new Intent(CONTEXT, LandlordMainPage.class);
 				startActivity(intent);
 			}
-		});
+		});*/
 	}
 }

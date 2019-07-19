@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<color name="white">#FFFFFF</color>
     <!--<color name="colorPrimary">#008577</color>
 	<color name="colorPrimaryDark">#00574B</color>
 	<color name="colorAccent">#D81B60</color>-->
@@ -23,7 +24,7 @@
 
 	<!--theme 2-->
 	<color name="colorPrimary">#70C1B3</color>
-	<color name="colorPrimaryDark">#1B5775</color>
+	<color name="colorPrimaryDark">#000000</color>
 	<color name="colorAccent">#FF1654</color>
 
 	<color name="lapisLazuli">#247BA0</color>

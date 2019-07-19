@@ -4,41 +4,55 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@color/lapisLazuli"
+	android:background="@color/veryPaleYellow"
 	tools:context=".MainActivity">
 
 	<Button
 		android:id="@+id/button2"
-		android:layout_width="@dimen/buttonWidth"
-		android:layout_height="@dimen/buttonHeight"
-		android:layout_marginStart="16dp"
-		android:layout_marginLeft="16dp"
-		android:layout_marginEnd="16dp"
-		android:layout_marginRight="16dp"
-		android:layout_marginBottom="260dp"
-		android:background="@color/veryPaleYellow"
-		android:text="@string/varatiya"
+		android:layout_width="280dp"
+		android:layout_height="140dp"
+		android:layout_marginStart="8dp"
+		android:layout_marginLeft="8dp"
+		android:layout_marginTop="108dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginRight="8dp"
+		android:drawableStart="@drawable/ic_landlord_1"
+		android:drawableLeft="@drawable/ic_landlord_1"
+		android:text="@string/bariwala"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.495"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:layout_marginLeft="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginRight="8dp"
+		android:layout_marginBottom="150dp"
+		android:gravity="center"
+		android:orientation="vertical"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintHorizontal_bias="0.497"
-		app:layout_constraintStart_toStartOf="parent" />
+		app:layout_constraintStart_toStartOf="parent">
 
-	<Button
-		android:id="@+id/button1"
-		android:layout_width="@dimen/buttonWidth"
-		android:layout_height="@dimen/buttonHeight"
-		android:layout_marginStart="16dp"
-		android:layout_marginLeft="16dp"
-		android:layout_marginTop="16dp"
-		android:layout_marginEnd="16dp"
-		android:layout_marginRight="16dp"
-		android:layout_marginBottom="16dp"
-		android:background="@color/veryPaleYellow"
-		android:text="@string/bariwala"
-		app:layout_constraintBottom_toTopOf="@+id/button2"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.497"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:layout_constraintVertical_bias="0.859" />
+		<ImageButton
+			android:id="@+id/imageButton4"
+			android:layout_width="@android:dimen/thumbnail_height"
+			android:layout_height="@android:dimen/thumbnail_width"
+			android:scaleType="fitXY"
+			app:srcCompat="@drawable/ic_renter_1" />
+
+		<TextView
+			android:id="@+id/textView12"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/varatiya"
+			android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+	</LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
