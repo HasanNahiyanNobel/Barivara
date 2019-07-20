@@ -18,7 +18,7 @@ public class LandlordMainPage extends AppCompatActivity {
 	}
 
 	public void addANewHouse (View view) {
-		Intent intent = new Intent(this, LandlordHouseAddress_Old.class);
+		Intent intent = new Intent(this, MapsActivity.class);
 		startActivity(intent);
 	}
 }
