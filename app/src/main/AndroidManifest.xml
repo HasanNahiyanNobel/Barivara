@@ -38,12 +38,7 @@
 		</activity>
 		<activity android:name=".RenterMainPage" />
 		<activity android:name=".LandlordHouseAttributes" />
-		<activity android:name=".LandlordHouseRentAmount" />
-		<activity android:name=".LandlordHouseAttributesOtherBath" />
-		<activity android:name=".LandlordHouseAttributesAttachedBath" />
-		<activity android:name=".LandlordHouseAttributesBedroom" />
-		<activity android:name=".LandlordPage_1_1" />
-		<activity android:name=".LandlordHouseAddress_Old" />
+		<activity android:name=".LandlordHouseAddress" />
 		<activity
 			android:name=".ui.login.LoginActivity"
 			android:label="@string/title_activity_login" />

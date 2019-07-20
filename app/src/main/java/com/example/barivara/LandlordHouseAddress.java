@@ -5,12 +5,12 @@ import android.widget.AutoCompleteTextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LandlordHouseAddress_Old extends AppCompatActivity {
+public class LandlordHouseAddress extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.old_activity_landlord_house_address);
+		setContentView(R.layout.activity_landlord_house_address);
 	}
 
 	private AutoCompleteTextView mSearchText;
