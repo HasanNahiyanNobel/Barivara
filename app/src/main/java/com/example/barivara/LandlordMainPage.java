@@ -13,10 +13,19 @@ public class LandlordMainPage extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_landlord_main_page);
-		listenButtons();
+		//listenButtons();
 	}
 
-	public void listenButtons() {
+	public void goToCurrentHouses (View view) {
+
+	}
+
+	public void addANewHouse (View view) {
+		Intent intent = new Intent(this,LandlordHouseAddress.class);
+		startActivity(intent);
+	}
+
+	/*public void listenButtons() {
 		final Context CONTEXT = this;
 		Button button3 = (Button) findViewById(R.id.button3);
 		button3.setOnClickListener(new View.OnClickListener() {
@@ -34,5 +43,5 @@ public class LandlordMainPage extends AppCompatActivity {
 				startActivity(intent);
 			}
 		});
-	}
+	}*/
 }

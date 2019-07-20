@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#F3705B;}
+	.st2{fill:#F3F3F3;}
+	.st3{fill:#FFD15D;}
+	.st4{fill:#435B6C;}
+</style>
+<g id="Others">
+	<circle class="st0" cx="500" cy="500" r="500"/>
+</g>
+<g id="Capa_1">
+	<path class="st1" d="M793.3,121.7C631-40.6,368.8-40.6,208.5,121.7c-162.3,162.3-162.3,422.5,0,584.8L499.9,1000l291.4-291.4
+		C953.6,546.3,953.6,284.1,793.3,121.7z"/>
+	<path class="st2" d="M499.9,138.4c-151.9,0-276.8,122.8-276.8,276.8c0,151.9,122.8,276.8,276.8,276.8
+		c151.9,0,276.8-122.8,276.8-276.8S651.8,138.4,499.9,138.4z"/>
+	<polygon class="st3" points="499.9,219.6 343.8,373.6 343.8,596.3 656,596.3 656,373.6 	"/>
+	<g>
+		<rect x="447.8" y="471.4" class="st4" width="106.1" height="124.9"/>
+		<path class="st4" d="M695.5,381.9l-179-179c-8.3-8.3-22.9-8.3-33.3,0l-179,179c-8.3,8.3-8.3,22.9,0,33.3c8.3,8.3,22.9,8.3,33.3,0
+			l162.3-164.4l162.3,162.3c4.2,4.2,10.4,6.2,16.6,6.2c6.2,0,12.5-2.1,16.6-6.2C703.8,404.8,703.8,390.2,695.5,381.9z"/>
+	</g>
+</g>
+</svg>
