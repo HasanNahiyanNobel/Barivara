@@ -23,6 +23,7 @@
 	<color name="awesomeRed">#FF1654</color>-->
 
 	<!--theme 2-->
+	<color name="defaultBackground">#F3FFBD</color>
 	<color name="colorPrimary">#70C1B3</color>
 	<color name="colorPrimaryDark">#000000</color>
 	<color name="colorAccent">#FF1654</color>
