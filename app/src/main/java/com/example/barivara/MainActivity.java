@@ -1,19 +1,16 @@
 package com.example.barivara;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//listenButtonsOld();
 	}
 
 	public void goToLandlordMain (View view) {
@@ -25,16 +22,4 @@ public class MainActivity extends AppCompatActivity {
 		Intent intent = new Intent(this,RenterMainPage.class);
 		startActivity(intent);
 	}
-
-	/*public void listenButtonsOld() {
-		*//*final Context CONTEXT = this;
-		Button button = (Button) findViewById(R.id.button1);
-		button.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(CONTEXT, LandlordMainPage.class);
-				startActivity(intent);
-			}
-		});*//*
-	}*/
 }
