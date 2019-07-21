@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,6 +47,8 @@ public class LandlordHouseAddress extends AppCompatActivity {
 		actvUpazila.setThreshold(1);
 
 		nameOfAreas.addAll(Arrays.asList("মোহাম্মাদপুর","খিলগাঁও","উত্তরা","পলাশী","শাঁখারী বাজার"));
+		String stringFromFile = readFromFile(this);
+		nameOfAreas.add(stringFromFile);
 
 		actvArea = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView3);
 		ArrayAdapter<String> areasArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, nameOfAreas);
@@ -68,29 +69,29 @@ public class LandlordHouseAddress extends AppCompatActivity {
 	}
 
 	private String readFromFile(Context context) {
-		String ret = "";
+		String returnString = "";
+		BufferedReader bufferedReader = null;
 		try {
-			InputStream inputStream = context.openFileInput("districts.txt");
-
-			if ( inputStream != null ) {
-				InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-				BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-				String receiveString = "";
-				StringBuilder stringBuilder = new StringBuilder();
-
-				while ( (receiveString = bufferedReader.readLine()) != null ) {
-					stringBuilder.append(receiveString);
-				}
-
-				inputStream.close();
-				ret = stringBuilder.toString();
+			bufferedReader = new BufferedReader(new InputStreamReader(getAssets().open("districts.txt")));
+			String aLine;
+			StringBuilder stringBuilder = new StringBuilder();
+			while ((aLine=bufferedReader.readLine())!=null) {
+				stringBuilder.append(aLine);
 			}
-		}
-		catch (FileNotFoundException e) {
+			returnString = stringBuilder.toString();
+		} catch (FileNotFoundException e) {
 			Log.e("Locations of Bangladesh","File not found: " + e.toString());
 		} catch (IOException e) {
 			Log.e("Locations of Bangladesh", "Can not read file: " + e.toString());
+		} finally {
+			if (bufferedReader!=null) {
+				try {
+					bufferedReader.close();
+				} catch (IOException e) {
+					Log.e("Closing BufferedReader", "Can not close bufferedReader: " + e.toString());
+				}
+			}
 		}
-		return ret;
+		return returnString;
 	}
 }
