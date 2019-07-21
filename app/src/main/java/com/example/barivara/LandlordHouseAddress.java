@@ -31,14 +31,14 @@ public class LandlordHouseAddress extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_landlord_house_address);
 
-		nameOfDistricts.addAll(Arrays.asList("ঢাকা","নারায়ণগঞ্জ","গাজীপুর","মুন্সীগঞ্জ","মানিকগঞ্জ","নরসিংদী","ফরিদপুর","মাদারীপুর","গোপালগঞ্জ","রাজবাড়ী","শরীয়তপুর","টাঙ্গাইল","কিশোরগঞ্জ"));
+		getLocationsFromFile("districts.txt",nameOfDistricts);
 
 		actvDistricts = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
 		ArrayAdapter<String> districtsArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,nameOfDistricts);
 		actvDistricts.setAdapter(districtsArrayAdapter);
 		actvDistricts.setThreshold(1);
 
-		nameOfUpazilas.addAll(Arrays.asList("ঢাকা","ধামরাই","দোহার","নবাবগঞ্জ","কেরানীগঞ্জ","সাভার"));
+		getLocationsFromFile("upazilas.txt",nameOfUpazilas);
 
 		actvUpazila = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView2);
 		ArrayAdapter<String> upazilasArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,nameOfUpazilas);
@@ -46,7 +46,7 @@ public class LandlordHouseAddress extends AppCompatActivity {
 		actvUpazila.setThreshold(1);
 
 		nameOfAreas.addAll(Arrays.asList("মোহাম্মাদপুর","খিলগাঁও","উত্তরা","পলাশী","শাঁখারী বাজার"));
-		getLocationsFromFile("districts.txt",nameOfAreas);
+		//getLocationsFromFile("districts.txt",nameOfAreas);
 
 		actvArea = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView3);
 		ArrayAdapter<String> areasArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, nameOfAreas);
