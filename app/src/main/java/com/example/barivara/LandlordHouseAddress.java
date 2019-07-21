@@ -1,6 +1,5 @@
 package com.example.barivara;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,8 +46,7 @@ public class LandlordHouseAddress extends AppCompatActivity {
 		actvUpazila.setThreshold(1);
 
 		nameOfAreas.addAll(Arrays.asList("মোহাম্মাদপুর","খিলগাঁও","উত্তরা","পলাশী","শাঁখারী বাজার"));
-		String stringFromFile = readFromFile(this);
-		nameOfAreas.add(stringFromFile);
+		getLocationsFromFile("districts.txt",nameOfAreas);
 
 		actvArea = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView3);
 		ArrayAdapter<String> areasArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, nameOfAreas);
@@ -68,15 +66,16 @@ public class LandlordHouseAddress extends AppCompatActivity {
 		actvArea.showDropDown();
 	}
 
-	private String readFromFile(Context context) {
+	private String getLocationsFromFile(String fileName, ArrayList<String> nameOfLocations) {
 		String returnString = "";
 		BufferedReader bufferedReader = null;
 		try {
-			bufferedReader = new BufferedReader(new InputStreamReader(getAssets().open("districts.txt")));
+			bufferedReader = new BufferedReader(new InputStreamReader(getAssets().open(fileName)));
 			String aLine;
 			StringBuilder stringBuilder = new StringBuilder();
 			while ((aLine=bufferedReader.readLine())!=null) {
 				stringBuilder.append(aLine);
+				nameOfLocations.add(aLine);
 			}
 			returnString = stringBuilder.toString();
 		} catch (FileNotFoundException e) {
