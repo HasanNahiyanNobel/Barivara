@@ -1,4 +1,4 @@
-package com.example.barivara;
+package com.example.barivara.landlord;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,10 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LandlordMainPage extends AppCompatActivity {
+import com.example.barivara.MainActivity;
+import com.example.barivara.R;
+
+public class MainPage extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -19,7 +22,7 @@ public class LandlordMainPage extends AppCompatActivity {
 		 * Using this function prevents to go back to any other activity which started this activity.
 		 */
 		super.onBackPressed();
-		Intent intent = new Intent(this,MainActivity.class);
+		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
 	}
 
@@ -28,7 +31,7 @@ public class LandlordMainPage extends AppCompatActivity {
 	}
 
 	public void addANewHouse (View view) {
-		Intent intent = new Intent(this, LandlordHouseAddress.class);
+		Intent intent = new Intent(this, HouseAddress.class);
 		startActivity(intent);
 	}
 }

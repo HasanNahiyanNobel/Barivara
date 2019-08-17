@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.barivara.renter.MainPage;
+
 public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -14,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void goToLandlordMain (View view) {
-		Intent intent = new Intent(this,LandlordMainPage.class);
+		Intent intent = new Intent(this, com.example.barivara.landlord.MainPage.class);
 		startActivity(intent);
 	}
 
 	public void goToRenterMain (View view) {
-		Intent intent = new Intent(this,RenterMainPage.class);
+		Intent intent = new Intent(this, MainPage.class);
 		startActivity(intent);
 	}
 }

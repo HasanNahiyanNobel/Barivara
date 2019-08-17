@@ -1,4 +1,4 @@
-package com.example.barivara;
+package com.example.barivara.landlord;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LandlordHouseAttributes extends AppCompatActivity {
+import com.example.barivara.R;
+
+public class HouseAttributes extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -14,7 +16,7 @@ public class LandlordHouseAttributes extends AppCompatActivity {
 	}
 
 	public void goToRentAmount(View view) {
-		Intent intent = new Intent(this,LandlordRentAmount.class);
+		Intent intent = new Intent(this, RentAmount.class);
 		startActivity(intent);
 	}
 }

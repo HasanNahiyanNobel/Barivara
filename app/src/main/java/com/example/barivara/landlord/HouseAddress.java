@@ -1,4 +1,4 @@
-package com.example.barivara;
+package com.example.barivara.landlord;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.AutoCompleteTextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.barivara.R;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,7 +18,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class LandlordHouseAddress extends AppCompatActivity {
+public class HouseAddress extends AppCompatActivity {
 	AutoCompleteTextView actvDistricts, actvUpazila, actvArea;
 
 	private ArrayList<String> nameOfDivisions = new ArrayList<String>();
@@ -96,7 +98,7 @@ public class LandlordHouseAddress extends AppCompatActivity {
 	}
 
 	public void goToHouseAttributes(View view) {
-		Intent intent = new Intent(this,LandlordHouseAttributes.class);
+		Intent intent = new Intent(this, HouseAttributes.class);
 		startActivity(intent);
 	}
 }
