@@ -13,6 +13,16 @@ public class LandlordMainPage extends AppCompatActivity {
 		setContentView(R.layout.activity_landlord_main_page);
 	}
 
+	@Override
+	public void onBackPressed() {
+		/**
+		 * Using this function prevents to go back to any other activity which started this activity.
+		 */
+		super.onBackPressed();
+		Intent intent = new Intent(this,MainActivity.class);
+		startActivity(intent);
+	}
+
 	public void goToCurrentHouses (View view) {
 
 	}

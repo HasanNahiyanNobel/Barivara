@@ -1,11 +1,10 @@
 package com.example.barivara;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class RenterMainPage extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
+public class RenterMainPage extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
