@@ -18,9 +18,6 @@ public class MainPage extends AppCompatActivity {
 
 	@Override
 	public void onBackPressed() {
-		/**
-		 * Using this function prevents to go back to any other activity which started this activity.
-		 */
 		super.onBackPressed();
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);
