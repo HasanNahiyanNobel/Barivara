@@ -22,13 +22,12 @@
 	<string name="typeOfHouse">বাসার ধরন</string>
 	<string name="familyHouse">ফ্যামিলি বাসা</string>
 	<string name="Mess">মেস</string>
-	<string name="amountOfRent">ভাড়ার পরিমাণ</string>
+	<string name="amountOfRent">ভাড়ার পরিমাণ (টাকায়)</string>
 	<string name="numberOfBedrooms">শোবার ঘরের সংখ্যা</string>
 	<string name="doesExist">আছে</string>
 	<string name="numberOfAttachedBaths">এ্যাটাচড বাথরুমের সংখ্যা</string>
 	<string name="numberOfOtherBaths">অন্যান্য বাথরুমের সংখ্যা</string>
 	<string name="numberOfBaths">বাথরুমের সংখ্যা</string>
-	<string name="rentAmount">বাড়িভাড়া</string>
 	<string name="diningRoom">খাবার ঘর</string>
 	<string name="cookingRoom">রান্নাঘর</string>
 	<string name="title_activity_maps">Map</string>
