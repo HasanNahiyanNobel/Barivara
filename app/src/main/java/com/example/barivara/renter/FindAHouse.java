@@ -1,12 +1,10 @@
 package com.example.barivara.renter;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.barivara.MainActivity;
 import com.example.barivara.R;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
@@ -39,12 +37,5 @@ public class FindAHouse extends AppCompatActivity {
 				txtVw.setText(status.toString());
 			}
 		});
-	}
-
-	@Override
-	public void onBackPressed() {
-		super.onBackPressed();
-		Intent intent = new Intent(this, MainActivity.class);
-		startActivity(intent);
 	}
 }
