@@ -2,8 +2,12 @@
 	<string name="app_name">Barivara</string>
 	<string name="bariwala">বাড়িওয়ালা</string>
 	<string name="varatiya">ভাড়াটিয়া</string>
-	<string name="amarBashagulo">আমার বাসাগুলো</string>
+
+	<string name="amarBashagulo_Bariwala">আমার বাসাগুলো</string>
 	<string name="notunBashaJog">নতুন বাসা যোগ</string>
+
+	<string name="notunBashaVara">নতুন বাসা ভাড়া</string>
+	<string name="amarBashagulo_Varatiya">আমার বাসাগুলো</string>
 
 	<string name="title_activity_login">Sign in</string>
 	<string name="prompt_email">Email</string>

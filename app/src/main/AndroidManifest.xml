@@ -15,7 +15,8 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-		<activity android:name=".landlord.RentAmount"></activity>
+		<activity android:name=".renter.MainPage"></activity>
+		<activity android:name=".landlord.RentAmount" />
 		<!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -35,7 +36,7 @@
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="com.example.barivara.landlord.MainPage" />
 		</activity>
-		<activity android:name=".renter.MainPage" />
+		<activity android:name=".renter.FindAHouse" />
 		<activity android:name=".landlord.HouseAttributes" />
 		<activity android:name=".landlord.HouseAddress" />
 		<activity
