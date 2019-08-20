@@ -7,8 +7,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.barivara.renter.MainPage;
-
 public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
 
@@ -39,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void goToRenterMain (View view) {
-		Intent intent = new Intent(this, MainPage.class);
+		Intent intent = new Intent(this, com.example.barivara.renter.MainPage.class);
 		startActivity(intent);
 	}
 }

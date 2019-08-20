@@ -2,6 +2,7 @@ package com.example.barivara.renter;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,11 @@ public class MainPage extends AppCompatActivity {
 	public void onBackPressed() {
 		super.onBackPressed();
 		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
+	}
+
+	public void findAHouse(View view) {
+		Intent intent = new Intent(this,FindAHouse.class);
 		startActivity(intent);
 	}
 }
