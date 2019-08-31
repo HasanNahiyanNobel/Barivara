@@ -5,7 +5,7 @@
 
 	<string name="email_hint">ইমেইল</string>
 	<string name="password_hint">পাসওয়ার্ড</string>
-	<string name="signInOrRegisterAction">সাইন-ইন কিংবা রেজিস্টার</string>
+	<string name="signInOrRegisterAction">সাইন-ইন/রেজিস্টার</string>
 
 	<string name="amarBashagulo_Bariwala">আমার বাসাগুলো</string>
 	<string name="notunBashaJog">নতুন বাসা যোগ</string>
