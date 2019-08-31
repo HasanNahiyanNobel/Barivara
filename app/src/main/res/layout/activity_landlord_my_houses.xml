@@ -7,18 +7,85 @@
 	android:background="@color/defaultBackground"
 	tools:context=".landlord.MyHouses">
 
-	<ImageView
-		android:id="@+id/imageView"
-		android:layout_width="250dp"
-		android:layout_height="250dp"
-		android:layout_marginStart="8dp"
-		android:layout_marginLeft="8dp"
-		android:layout_marginBottom="8dp"
-		android:clickable="true"
-		android:onClick="imageClicked"
-		app:layout_constraintBottom_toBottomOf="parent"
+	<TextView
+		android:id="@+id/textView5"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginLeft="16dp"
+		android:layout_marginTop="16dp"
+		android:layout_marginEnd="16dp"
+		android:layout_marginRight="16dp"
+		android:text="@string/amarBashagulo_Bariwala"
+		android:textAppearance="@style/TextAppearance.AppCompat.Large"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:srcCompat="@drawable/ic_my_houses_2" />
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TableLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginLeft="16dp"
+		android:layout_marginTop="16dp"
+		android:layout_marginEnd="16dp"
+		android:layout_marginRight="16dp"
+		android:layout_marginBottom="16dp"
+		android:gravity="center"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.523"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/textView5"
+		app:layout_constraintVertical_bias="0.371">
+
+		<TableRow
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<TextView
+				android:id="@+id/textView1"
+				android:layout_width="270dp"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:text="@string/basharThikana" />
+
+			<Button
+				android:id="@+id/button1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/bistarito" />
+		</TableRow>
+
+		<TableRow
+			android:layout_width="match_parent"
+			android:layout_height="224dp">
+
+			<TextView
+				android:id="@+id/textView2"
+				android:layout_width="270dp"
+				android:layout_height="match_parent"
+				android:gravity="center"
+				android:text="@string/basharThikana" />
+
+			<Button
+				android:id="@+id/button2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/bistarito" />
+
+		</TableRow>
+
+		<TableRow
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<Button
+				android:id="@+id/button6"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Button" />
+		</TableRow>
+	</TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

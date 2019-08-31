@@ -21,6 +21,7 @@
 
 	<string name="button_ok">ঠিক আছে</string>
 	<string name="button_next_page">পরবর্তী পৃষ্ঠা</string>
+	<string name="bistarito">বিস্তারিত</string>
 
 	<string name="houseInfo">বাসা সম্পর্কিত তথ্য</string>
 	<string name="typeOfHouse">বাসার ধরন</string>
