@@ -3,6 +3,10 @@
 	<string name="bariwala">বাড়িওয়ালা</string>
 	<string name="varatiya">ভাড়াটিয়া</string>
 
+	<string name="email_hint">ইমেইল</string>
+	<string name="password_hint">পাসওয়ার্ড</string>
+	<string name="signInOrRegisterAction">সাইন-ইন কিংবা রেজিস্টার</string>
+
 	<string name="amarBashagulo_Bariwala">আমার বাসাগুলো</string>
 	<string name="notunBashaJog">নতুন বাসা যোগ</string>
 
