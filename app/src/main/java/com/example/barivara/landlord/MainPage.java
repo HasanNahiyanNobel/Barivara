@@ -6,8 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.barivara.MainActivity;
 import com.example.barivara.R;
+import com.example.barivara.SimpleLoginActivity;
 
 public class MainPage extends AppCompatActivity {
 	@Override
@@ -19,7 +19,7 @@ public class MainPage extends AppCompatActivity {
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
-		Intent intent = new Intent(this, MainActivity.class);
+		Intent intent = new Intent(this, SimpleLoginActivity.class);
 		startActivity(intent);
 	}
 
