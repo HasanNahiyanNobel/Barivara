@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.barivara.MainActivity;
+import com.example.barivara.MainActivityNew;
 import com.example.barivara.R;
 
 public class MainPage extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class MainPage extends AppCompatActivity {
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
-		Intent intent = new Intent(this, MainActivity.class);
+		Intent intent = new Intent(this, MainActivityNew.class);
 		startActivity(intent);
 	}
 

@@ -26,18 +26,13 @@ public class MainActivity extends AppCompatActivity {
 			startActivity(intent);
 		}
 		else {
-			Toast.makeText(this, "আরেকবার চাপলেই বন্ধ হয়ে যাবে!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getResources().getString(R.string.appCloseMessage), Toast.LENGTH_SHORT).show();
 			backButtonCount++;
 		}
 	}
 
-	public void goToLandlordMain (View view) {
-		Intent intent = new Intent(this, com.example.barivara.landlord.MainPage.class);
-		startActivity(intent);
-	}
-
-	public void goToRenterMain (View view) {
-		Intent intent = new Intent(this, com.example.barivara.renter.MainPage.class);
+	public void loginOrRegister (View view) {
+		Intent intent = new Intent(this, MainActivityNew.class);
 		startActivity(intent);
 	}
 }
