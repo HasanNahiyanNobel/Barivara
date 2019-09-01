@@ -3,12 +3,6 @@
 	<string name="bariwala">বাড়িওয়ালা</string>
 	<string name="varatiya">ভাড়াটিয়া</string>
 
-	<string name="amarBashagulo_Bariwala">আমার বাসাগুলো</string>
-	<string name="notunBashaJog">নতুন বাসা যোগ</string>
-
-	<string name="notunBashaVara">নতুন বাসা ভাড়া</string>
-	<string name="amarBashagulo_Varatiya">আমার বাসাগুলো</string>
-
 	<string name="title_activity_login">Sign in</string>
 	<string name="prompt_email">Email</string>
 	<string name="prompt_password">Password</string>
@@ -20,8 +14,16 @@
 	<string name="login_failed">"Login failed"</string>
 	<string name="login">লগইন</string>
 
+	<string name="closeApplicationText">আরেকবার চাপলেই বন্ধ হয়ে যাবে!</string>
+
 	<string name="button_ok">ঠিক আছে</string>
 	<string name="button_next_page">পরবর্তী পৃষ্ঠা</string>
+
+	<string name="amarBashagulo_Bariwala">আমার বাসাগুলো</string>
+	<string name="notunBashaJog">নতুন বাসা যোগ</string>
+
+	<string name="notunBashaVara">নতুন বাসা ভাড়া</string>
+	<string name="amarBashagulo_Varatiya">আমার বাসাগুলো</string>
 
 	<string name="houseInfo">বাসা সম্পর্কিত তথ্য</string>
 	<string name="typeOfHouse">বাসার ধরন</string>

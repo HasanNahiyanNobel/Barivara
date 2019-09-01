@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 			startActivity(intent);
 		}
 		else {
-			Toast.makeText(this, "আরেকবার চাপলেই বন্ধ হয়ে যাবে!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getResources().getString(R.string.closeApplicationText), Toast.LENGTH_SHORT).show();
 			backButtonCount++;
 		}
 	}
