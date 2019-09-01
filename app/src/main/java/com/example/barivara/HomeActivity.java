@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivityNew extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 	//TODO Expand these linear layouts horizontally.
 	int backButtonCount;
 
@@ -15,7 +15,7 @@ public class MainActivityNew extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main_new);
+		setContentView(R.layout.activity_home);
 	}
 
 	@Override
