@@ -32,4 +32,9 @@ public class MainPage extends AppCompatActivity {
 		Intent intent = new Intent(this, HouseAddress.class);
 		startActivity(intent);
 	}
+
+	public void goToOldRenters (View view) {
+		Intent intent = new Intent(this, OldRenters.class);
+		startActivity(intent);
+	}
 }
