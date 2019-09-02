@@ -27,4 +27,9 @@ public class MainPage extends AppCompatActivity {
 		Intent intent = new Intent(this,FindAHouse.class);
 		startActivity(intent);
 	}
+
+	public void goToOldLandlords (View view) {
+		Intent intent = new Intent(this, OldLandlords.class);
+		startActivity(intent);
+	}
 }
