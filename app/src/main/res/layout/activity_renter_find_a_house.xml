@@ -23,4 +23,18 @@
 		app:layout_constraintTop_toTopOf="parent"
 		tools:layout="@layout/place_autocomplete_fragment" />
 
+	<TextView
+		android:id="@+id/placeName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="16dp"
+		android:layout_marginLeft="16dp"
+		android:layout_marginTop="300dp"
+		android:layout_marginEnd="16dp"
+		android:layout_marginRight="16dp"
+		android:text="@android:string/unknownName"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/place_autocomplete_fragment" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
