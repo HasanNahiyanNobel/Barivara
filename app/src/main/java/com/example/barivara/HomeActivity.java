@@ -7,14 +7,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
+	//TODO Expand these linear layouts horizontally.
 	int backButtonCount;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_home);
 	}
 
 	@Override
@@ -31,8 +32,13 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 
-	public void loginOrRegister (View view) {
-		Intent intent = new Intent(this, HomeActivity.class);
+	public void goToLandlordMain (View view) {
+		Intent intent = new Intent(this, com.example.barivara.landlord.MainPage.class);
+		startActivity(intent);
+	}
+
+	public void goToRenterMain (View view) {
+		Intent intent = new Intent(this, com.example.barivara.renter.MainPage.class);
 		startActivity(intent);
 	}
 }

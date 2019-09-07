@@ -15,7 +15,8 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-		<activity android:name=".landlord.MyHouses"></activity>
+		<activity android:name=".HomeActivity"></activity>
+		<activity android:name=".landlord.MyHouses" />
 		<activity android:name=".renter.MainPage" />
 		<activity android:name=".landlord.RentAmount" />
 		<!--
