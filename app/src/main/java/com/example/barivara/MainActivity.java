@@ -3,11 +3,16 @@ package com.example.barivara;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
+	private ListView listView;
 	int backButtonCount;
 
 	@Override
@@ -15,6 +20,15 @@ public class MainActivity extends AppCompatActivity {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		listView = (ListView) findViewById(R.id.pagination_list);
+
+
+		Retrofit.Builder builder = new Retrofit.Builder()
+				.baseUrl("https://api.github.com/")
+				.addConverterFactory(GsonConverterFactory.create());
+
+		Retrofit retrofit = builder.build();
 	}
 
 	@Override
