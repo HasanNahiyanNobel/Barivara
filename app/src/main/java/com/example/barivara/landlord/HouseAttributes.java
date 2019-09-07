@@ -26,7 +26,7 @@ public class HouseAttributes extends AppCompatActivity {
 		setContentView(R.layout.activity_landlord_house_attributes);
 
 		Retrofit.Builder builder = new Retrofit.Builder()
-				.baseUrl("http://192.168.10.208:8000/")
+				.baseUrl("http://192.168.0.108:8000/")
 				//    .baseUrl("https://api.github.com/")
 				.addConverterFactory(GsonConverterFactory.create());
 
@@ -42,7 +42,7 @@ public class HouseAttributes extends AppCompatActivity {
 				List<Home> repos = response.body();
 
 				for(Home rep: repos){
-					Toast.makeText(HouseAttributes.this, rep.getDhoron(), Toast.LENGTH_SHORT).show();
+					Toast.makeText(HouseAttributes.this, rep.getBariwalar_nam(), Toast.LENGTH_SHORT).show();
 				}
 			}
 

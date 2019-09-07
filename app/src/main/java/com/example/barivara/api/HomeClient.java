@@ -6,6 +6,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface HomeClient {
-	@GET("/holmes/")
+	@GET("/houses-list/")
 	Call<List<Home>> homeAll();
 }

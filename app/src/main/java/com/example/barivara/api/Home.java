@@ -1,68 +1,134 @@
 package com.example.barivara.api;
 
 public class Home {
-	private String dhoron;
-	private Integer songkha_shobar_ghor;
-	private Integer songkha_bathroom;
-	private Boolean khabar_ghor;
-	private Boolean ranna_ghor;
+	private String bariwalar_nam;
+	private int bariwalar_reg_id;
+	private String zilla;
+	private String upazilla;
+	private String elaka;
+	private boolean family_basha;
+	private int shobar_ghorer_shongkhya;
+	private int bathroomer_shongkhya;
+	private boolean khabar_ghor;
+	private boolean rannaghor;
+	private int barivara;
 
-	public Home(String dhoron, Integer songkha_shobar_ghor, Integer songkha_bathroom, Boolean khabar_ghor, Boolean ranna_ghor) {
-		this.dhoron = dhoron;
-		this.songkha_shobar_ghor = songkha_shobar_ghor;
-		this.songkha_bathroom = songkha_bathroom;
+	public Home(String bariwalar_nam, int bariwalar_reg_id, String zilla, String upazilla, String elaka, boolean family_basha, int shobar_ghorer_shongkhya, int bathroomer_shongkhya, boolean khabar_ghor, boolean rannaghor, int barivara) {
+		this.bariwalar_nam = bariwalar_nam;
+		this.bariwalar_reg_id = bariwalar_reg_id;
+		this.zilla = zilla;
+		this.upazilla = upazilla;
+		this.elaka = elaka;
+		this.family_basha = family_basha;
+		this.shobar_ghorer_shongkhya = shobar_ghorer_shongkhya;
+		this.bathroomer_shongkhya = bathroomer_shongkhya;
 		this.khabar_ghor = khabar_ghor;
-		this.ranna_ghor = ranna_ghor;
+		this.rannaghor = rannaghor;
+		this.barivara = barivara;
 	}
 
-	public String getDhoron() {
-		return dhoron;
+	public String getBariwalar_nam() {
+		return bariwalar_nam;
 	}
 
-	public Integer getSongkha_shobar_ghor() {
-		return songkha_shobar_ghor;
+	public int getBariwalar_reg_id() {
+		return bariwalar_reg_id;
 	}
 
-	public Integer getSongkha_bathroom() {
-		return songkha_bathroom;
+	public String getZilla() {
+		return zilla;
 	}
 
-	public Boolean getKhabar_ghor() {
+	public String getUpazilla() {
+		return upazilla;
+	}
+
+	public String getElaka() {
+		return elaka;
+	}
+
+	public boolean isFamily_basha() {
+		return family_basha;
+	}
+
+	public int getShobar_ghorer_shongkhya() {
+		return shobar_ghorer_shongkhya;
+	}
+
+	public int getBathroomer_shongkhya() {
+		return bathroomer_shongkhya;
+	}
+
+	public boolean isKhabar_ghor() {
 		return khabar_ghor;
 	}
 
-	public void setDhoron(String dhoron) {
-		this.dhoron = dhoron;
+	public boolean isRannaghor() {
+		return rannaghor;
 	}
 
-	public void setSongkha_shobar_ghor(Integer songkha_shobar_ghor) {
-		this.songkha_shobar_ghor = songkha_shobar_ghor;
+	public int getBarivara() {
+		return barivara;
 	}
 
-	public void setSongkha_bathroom(Integer songkha_bathroom) {
-		this.songkha_bathroom = songkha_bathroom;
+	public void setBariwalar_nam(String bariwalar_nam) {
+		this.bariwalar_nam = bariwalar_nam;
 	}
 
-	public void setKhabar_ghor(Boolean khabar_ghor) {
+	public void setBariwalar_reg_id(int bariwalar_reg_id) {
+		this.bariwalar_reg_id = bariwalar_reg_id;
+	}
+
+	public void setZilla(String zilla) {
+		this.zilla = zilla;
+	}
+
+	public void setUpazilla(String upazilla) {
+		this.upazilla = upazilla;
+	}
+
+	public void setElaka(String elaka) {
+		this.elaka = elaka;
+	}
+
+	public void setFamily_basha(boolean family_basha) {
+		this.family_basha = family_basha;
+	}
+
+	public void setShobar_ghorer_shongkhya(int shobar_ghorer_shongkhya) {
+		this.shobar_ghorer_shongkhya = shobar_ghorer_shongkhya;
+	}
+
+	public void setBathroomer_shongkhya(int bathroomer_shongkhya) {
+		this.bathroomer_shongkhya = bathroomer_shongkhya;
+	}
+
+	public void setKhabar_ghor(boolean khabar_ghor) {
 		this.khabar_ghor = khabar_ghor;
 	}
 
-	public void setRanna_ghor(Boolean ranna_ghor) {
-		this.ranna_ghor = ranna_ghor;
+	public void setRannaghor(boolean rannaghor) {
+		this.rannaghor = rannaghor;
 	}
 
-	public Boolean getRanna_ghor() {
-		return ranna_ghor;
+	public void setBarivara(int barivara) {
+		this.barivara = barivara;
 	}
 
 	@Override
 	public String toString() {
 		return "Home{" +
-				"dhoron='" + dhoron + '\'' +
-				", songkha_shobar_ghor=" + songkha_shobar_ghor +
-				", songkha_bathroom=" + songkha_bathroom +
+				"bariwalar_nam='" + bariwalar_nam + '\'' +
+				", bariwalar_reg_id=" + bariwalar_reg_id +
+				", zilla='" + zilla + '\'' +
+				", upazilla='" + upazilla + '\'' +
+				", elaka='" + elaka + '\'' +
+				", family_basha=" + family_basha +
+				", shobar_ghorer_shongkhya=" + shobar_ghorer_shongkhya +
+				", bathroomer_shongkhya=" + bathroomer_shongkhya +
 				", khabar_ghor=" + khabar_ghor +
-				", ranna_ghor=" + ranna_ghor +
+				", rannaghor=" + rannaghor +
+				", barivara=" + barivara +
 				'}';
 	}
 }
