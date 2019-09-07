@@ -8,6 +8,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -21,14 +24,19 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		listView = (ListView) findViewById(R.id.pagination_list);
-
+		//listView = (ListView) findViewById(R.id.pagination_list);
 
 		Retrofit.Builder builder = new Retrofit.Builder()
-				.baseUrl("https://api.github.com/")
+				.baseUrl("http://192.168.0.108:8000/")
 				.addConverterFactory(GsonConverterFactory.create());
 
 		Retrofit retrofit = builder.build();
+
+		String type_ob = "Houses";
+
+		HouseClient houseClient = retrofit.create(HouseClient.class);
+
+		Call<List<House>> callListHouse = HouseClient.houses_list();
 	}
 
 	@Override
