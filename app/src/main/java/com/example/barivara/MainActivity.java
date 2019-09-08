@@ -7,6 +7,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * This is the login activity. Don't know why, refactoring it's name causes problem.
+ * So I just let it have it's old name, MainActivity.
+ */
+
 public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
 
@@ -31,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 
-	public void loginOrRegister (View view) {
-		Intent intent = new Intent(this, HomeActivity.class);
+	public void login(View view) {
+		Intent intent = new Intent(this, RegistrationActivity.class);
 		startActivity(intent);
 	}
 }
