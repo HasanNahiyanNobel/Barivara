@@ -21,22 +21,22 @@ public class HouseAttributes extends AppCompatActivity {
 
 		Retrofit retrofit = builder.build();
 
-		HomeClient homeClient = retrofit.create(HomeClient.class);
+		HouseClient homeClient = retrofit.create(HouseClient.class);
 
-		Call<List<Home>> call_home = homeClient.homeAll();
+		Call<List<House>> call_home = homeClient.houseAll();
 
-		call_home.enqueue(new Callback<List<Home>>() {
+		call_home.enqueue(new Callback<List<House>>() {
 			@Override
-			public void onResponse(Call<List<Home>> call, Response<List<Home>> response) {
-				List<Home> repos = response.body();
+			public void onResponse(Call<List<House>> call, Response<List<House>> response) {
+				List<House> repos = response.body();
 
-				for(Home rep: repos){
+				for(House rep: repos){
 					Toast.makeText(HouseAttributes.this, rep.getBariwalar_nam(), Toast.LENGTH_SHORT).show();
 				}
 			}
 
 			@Override
-			public void onFailure(Call<List<Home>> call, Throwable t) {
+			public void onFailure(Call<List<House>> call, Throwable t) {
 				Toast.makeText(HouseAttributes.this, "error :(", Toast.LENGTH_SHORT).show();
 			}
 		});*/

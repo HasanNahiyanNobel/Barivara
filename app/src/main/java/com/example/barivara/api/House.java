@@ -1,6 +1,6 @@
 package com.example.barivara.api;
 
-public class Home {
+public class House {
 	private String bariwalar_nam;
 	private int bariwalar_reg_id;
 	private String zilla;
@@ -13,7 +13,7 @@ public class Home {
 	private boolean rannaghor;
 	private int barivara;
 
-	public Home(String bariwalar_nam, int bariwalar_reg_id, String zilla, String upazilla, String elaka, boolean family_basha, int shobar_ghorer_shongkhya, int bathroomer_shongkhya, boolean khabar_ghor, boolean rannaghor, int barivara) {
+	public House(String bariwalar_nam, int bariwalar_reg_id, String zilla, String upazilla, String elaka, boolean family_basha, int shobar_ghorer_shongkhya, int bathroomer_shongkhya, boolean khabar_ghor, boolean rannaghor, int barivara) {
 		this.bariwalar_nam = bariwalar_nam;
 		this.bariwalar_reg_id = bariwalar_reg_id;
 		this.zilla = zilla;
@@ -117,7 +117,7 @@ public class Home {
 
 	@Override
 	public String toString() {
-		return "Home{" +
+		return "House{" +
 				"bariwalar_nam='" + bariwalar_nam + '\'' +
 				", bariwalar_reg_id=" + bariwalar_reg_id +
 				", zilla='" + zilla + '\'' +

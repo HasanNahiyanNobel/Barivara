@@ -8,8 +8,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.barivara.R;
-import com.example.barivara.api.Home;
-import com.example.barivara.api.HomeClient;
+import com.example.barivara.api.House;
+import com.example.barivara.api.HouseClient;
 
 import java.util.List;
 
@@ -32,19 +32,19 @@ public class FindAHouse extends AppCompatActivity {
 				.baseUrl("http://192.168.0.108:8000/")
 				.addConverterFactory(GsonConverterFactory.create());
 		Retrofit retrofit = builder.build();
-		HomeClient homeClient = retrofit.create(HomeClient.class);
-		Call<List<Home>> call_home = homeClient.homeAll();
-		call_home.enqueue(new Callback<List<Home>>() {
+		HouseClient houseClient = retrofit.create(HouseClient.class);
+		Call<List<House>> houseListCall = houseClient.houseAll();
+		houseListCall.enqueue(new Callback<List<House>>() {
 			@Override
-			public void onResponse(Call<List<Home>> call, Response<List<Home>> response) {
-				List<Home> repos = response.body();
+			public void onResponse(Call<List<House>> call, Response<List<House>> response) {
+				List<House> houseList = response.body();
 
-				for(Home rep: repos){
-					Toast.makeText(FindAHouse.this, rep.getElaka(), Toast.LENGTH_SHORT).show();
+				for(House house: houseList){
+					Toast.makeText(FindAHouse.this, house.getElaka(), Toast.LENGTH_SHORT).show();
 				}
 			}
 			@Override
-			public void onFailure(Call<List<Home>> call, Throwable t) {
+			public void onFailure(Call<List<House>> call, Throwable t) {
 				Toast.makeText(FindAHouse.this, "error :(", Toast.LENGTH_SHORT).show();
 			}
 		});

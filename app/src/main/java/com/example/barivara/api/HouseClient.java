@@ -5,7 +5,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface HomeClient {
+public interface HouseClient {
 	@GET("/houses-list/")
-	Call<List<Home>> homeAll();
+	Call<List<House>> houseAll();
 }
