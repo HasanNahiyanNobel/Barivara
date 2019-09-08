@@ -50,4 +50,6 @@
 	<string name="upazila">উপজেলা/সিটি কর্পোরেশন</string>
 	<string name="elaka">এলাকা</string>
 	<string name="basharThikana">বাসার ঠিকানা</string>
+
+	<string name="place_search_hint">জায়গার নাম</string>
 </resources>
