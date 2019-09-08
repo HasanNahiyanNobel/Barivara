@@ -3,21 +3,10 @@ package com.example.barivara.landlord;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.barivara.R;
-import com.example.barivara.api.Home;
-import com.example.barivara.api.HomeClient;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HouseAttributes extends AppCompatActivity {
 	@Override
@@ -25,7 +14,7 @@ public class HouseAttributes extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_landlord_house_attributes);
 
-		Retrofit.Builder builder = new Retrofit.Builder()
+		/*Retrofit.Builder builder = new Retrofit.Builder()
 				.baseUrl("http://192.168.0.108:8000/")
 				//    .baseUrl("https://api.github.com/")
 				.addConverterFactory(GsonConverterFactory.create());
@@ -50,9 +39,7 @@ public class HouseAttributes extends AppCompatActivity {
 			public void onFailure(Call<List<Home>> call, Throwable t) {
 				Toast.makeText(HouseAttributes.this, "error :(", Toast.LENGTH_SHORT).show();
 			}
-		});
-
-
+		});*/
 	}
 
 	public void goToRentAmount(View view) {
