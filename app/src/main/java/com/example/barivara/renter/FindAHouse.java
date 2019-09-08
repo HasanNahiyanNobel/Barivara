@@ -11,6 +11,7 @@ import com.example.barivara.R;
 import com.example.barivara.api.House;
 import com.example.barivara.api.HouseClient;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -21,7 +22,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FindAHouse extends AppCompatActivity {
 	AutoCompleteTextView autoCompleteTextView;
-	String[] placeName = {"মদনপুর", "আক্কেলপুর", "ময়মনসিংহ", "ফুলবাড়িয়া", "আনন্দনগর"};
+	ArrayList<String> placeName = new ArrayList<>();
+	String[] placeNameTemp = {"haum", "hehe"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,9 @@ public class FindAHouse extends AppCompatActivity {
 			@Override
 			public void onResponse(Call<List<House>> call, Response<List<House>> response) {
 				List<House> houseList = response.body();
-
-				for(House house: houseList){
-					Toast.makeText(FindAHouse.this, house.getElaka(), Toast.LENGTH_SHORT).show();
+				for(House house : houseList){
+					//Toast.makeText(FindAHouse.this, house.getElaka(), Toast.LENGTH_SHORT).show();
+					placeName.add(house.getZilla());
 				}
 			}
 			@Override
@@ -50,7 +52,7 @@ public class FindAHouse extends AppCompatActivity {
 		});
 
 		autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
-		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item, placeName);
+		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,placeName);
 		autoCompleteTextView.setThreshold(1);
 		autoCompleteTextView.setAdapter(arrayAdapter);
 	}
