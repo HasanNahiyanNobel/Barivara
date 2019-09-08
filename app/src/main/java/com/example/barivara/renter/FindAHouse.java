@@ -42,7 +42,7 @@ public class FindAHouse extends AppCompatActivity {
 				List<House> houseList = response.body();
 				for(House house : houseList){
 					//Toast.makeText(FindAHouse.this, house.getElaka(), Toast.LENGTH_SHORT).show();
-					placeName.add(house.getZilla());
+					placeName.add(house.getElaka()+" ("+house.getUpazilla()+", "+house.getZilla()+")");
 				}
 			}
 			@Override
