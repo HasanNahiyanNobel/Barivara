@@ -6,8 +6,6 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
 	<application
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
@@ -15,7 +13,8 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-		<activity android:name=".HomeActivity"></activity>
+		<activity android:name=".RegistrationActivity"></activity>
+		<activity android:name=".HomeActivity" />
 		<activity android:name=".landlord.MyHouses" />
 		<activity android:name=".renter.MainPage" />
 		<activity android:name=".landlord.RentAmount" />
@@ -27,10 +26,6 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-		<meta-data
-			android:name="com.google.android.geo.API_KEY"
-			android:value="@string/google_maps_key" />
-
 		<activity
 			android:name=".MapsActivity"
 			android:label="@string/title_activity_maps">
@@ -38,6 +33,7 @@
 				android:name="android.support.PARENT_ACTIVITY"
 				android:value="com.example.barivara.landlord.MainPage" />
 		</activity>
+
 		<activity android:name=".renter.FindAHouse" />
 		<activity android:name=".landlord.HouseAttributes" />
 		<activity android:name=".landlord.HouseAddress" />
@@ -52,6 +48,11 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".landlord.MainPage" />
+		<meta-data
+			android:name="com.google.android.geo.API_KEY"
+			android:value="@string/google_maps_key" />
 	</application>
+
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>

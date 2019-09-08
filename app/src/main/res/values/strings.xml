@@ -13,9 +13,12 @@
 	<string name="invalid_password">Password must be >5 characters</string>
 	<string name="login_failed">"Login failed"</string>
 
+	<string name="prompt_name">নাম</string>
 	<string name="prompt_email">ইমেইল</string>
 	<string name="prompt_password">পাসওয়ার্ড</string>
-	<string name="loginOrRegisterButton">লগইন / রেজিস্টার</string>
+	<string name="login_button">লগইন</string>
+	<string name="registration_button">রেজিস্টার</string>
+	<string name="registration_title">রেজিস্ট্রেশন</string>
 
 	<string name="appCloseMessage">আরেকবার চাপলেই বন্ধ হয়ে যাবে!</string>
 
