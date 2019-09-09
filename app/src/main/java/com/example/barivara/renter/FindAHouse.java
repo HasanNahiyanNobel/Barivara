@@ -1,41 +1,58 @@
 package com.example.barivara.renter;
 
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.barivara.R;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
-import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+import com.example.barivara.api.House;
+import com.example.barivara.api.HouseClient;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FindAHouse extends AppCompatActivity {
+	AutoCompleteTextView autoCompleteTextView;
+	ArrayList<String> placeName = new ArrayList<>();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_renter_find_a_house);
 
-		final TextView txtVw = findViewById(R.id.placeName);
-
-		PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
-				getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
-
-        /*AutocompleteFilter filter = new AutocompleteFilter.Builder()
-                .setCountry("IN")
-                .setTypeFilter(AutocompleteFilter.TYPE_FILTER_CITIES)
-                .build();
-        autocompleteFragment.setFilter(filter);*/
-		autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+		Retrofit.Builder builder = new Retrofit.Builder()
+				.baseUrl(getString(R.string.server_and_port))
+				.addConverterFactory(GsonConverterFactory.create());
+		Retrofit retrofit = builder.build();
+		HouseClient houseClient = retrofit.create(HouseClient.class);
+		Call<List<House>> houseListCall = houseClient.houseAll();
+		houseListCall.enqueue(new Callback<List<House>>() {
 			@Override
-			public void onPlaceSelected(Place place) {
-				txtVw.setText(place.getName());
+			public void onResponse(Call<List<House>> call, Response<List<House>> response) {
+				List<House> houseList = response.body();
+				for(House house : houseList){
+					//Toast.makeText(FindAHouse.this, house.getElaka(), Toast.LENGTH_SHORT).show();
+					placeName.add(house.getElaka()+" ("+house.getUpazilla()+", "+house.getZilla()+")");
+				}
 			}
 			@Override
-			public void onError(Status status) {
-				txtVw.setText(status.toString());
+			public void onFailure(Call<List<House>> call, Throwable t) {
+				Toast.makeText(FindAHouse.this, "error :(", Toast.LENGTH_SHORT).show();
 			}
 		});
+
+		autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,placeName);
+		autoCompleteTextView.setThreshold(1);
+		autoCompleteTextView.setAdapter(arrayAdapter);
 	}
 }
