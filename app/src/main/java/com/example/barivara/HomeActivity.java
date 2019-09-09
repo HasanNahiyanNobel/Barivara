@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 			startActivity(intent);
 		}
 		else {
-			Toast.makeText(this, getResources().getString(R.string.appCloseMessage), Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getResources().getString(R.string.app_close_toast), Toast.LENGTH_SHORT).show();
 			backButtonCount++;
 		}
 	}

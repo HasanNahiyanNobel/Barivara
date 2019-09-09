@@ -23,7 +23,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class FindAHouse extends AppCompatActivity {
 	AutoCompleteTextView autoCompleteTextView;
 	ArrayList<String> placeName = new ArrayList<>();
-	String[] placeNameTemp = {"haum", "hehe"};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,7 @@ public class FindAHouse extends AppCompatActivity {
 		setContentView(R.layout.activity_renter_find_a_house);
 
 		Retrofit.Builder builder = new Retrofit.Builder()
-				.baseUrl("http://192.168.0.108:8000/")
+				.baseUrl(getString(R.string.server_and_port))
 				.addConverterFactory(GsonConverterFactory.create());
 		Retrofit retrofit = builder.build();
 		HouseClient houseClient = retrofit.create(HouseClient.class);
