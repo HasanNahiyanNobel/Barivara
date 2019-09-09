@@ -21,9 +21,10 @@ public class RegistrationActivity extends AppCompatActivity {
 		nameEditText = findViewById(R.id.editText5);
 		emailEditText = findViewById(R.id.editText7);
 		passwordEditText = findViewById(R.id.editText8);
-		Toast.makeText(RegistrationActivity.this, nameEditText.getText(), Toast.LENGTH_SHORT).show();
-		Toast.makeText(RegistrationActivity.this, emailEditText.getText(), Toast.LENGTH_SHORT).show();
-		Toast.makeText(RegistrationActivity.this, passwordEditText.getText(), Toast.LENGTH_SHORT).show();
+		/*Toast.makeText(this, nameEditText.getText(), Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, emailEditText.getText(), Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, passwordEditText.getText(), Toast.LENGTH_SHORT).show();*/
+		Toast.makeText(this, getString(R.string.registration_successful_toast), Toast.LENGTH_SHORT).show();
 
 		Intent intent = new Intent(this, HomeActivity.class);
 		startActivity(intent);

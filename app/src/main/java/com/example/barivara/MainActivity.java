@@ -3,6 +3,7 @@ package com.example.barivara;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
+	EditText emailEditText, passwordEditText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void login(View view) {
+		emailEditText = findViewById(R.id.editText2);
+		passwordEditText = findViewById(R.id.editText3);
+		/*Toast.makeText(this, emailEditText.getText(), Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, passwordEditText.getText(), Toast.LENGTH_SHORT).show();*/
+
 		Intent intent = new Intent(this, RegistrationActivity.class);
 		startActivity(intent);
 	}

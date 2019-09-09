@@ -21,6 +21,7 @@
 	<string name="login_button">লগইন</string>
 	<string name="registration_button">রেজিস্টার</string>
 	<string name="registration_title">রেজিস্ট্রেশন</string>
+	<string name="registration_successful_toast">আপনার রেজিস্ট্রেশন সম্পন্ন হয়েছে</string>
 
 	<string name="app_close_toast">আরেকবার চাপলেই বন্ধ হয়ে যাবে!</string>
 
