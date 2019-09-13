@@ -1,6 +1,8 @@
 package com.example.barivara.renter;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
@@ -22,6 +24,15 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FindAHouse extends AppCompatActivity {
+	TextView.OnEditorActionListener listenerTextView3 = new TextView.OnEditorActionListener() {
+		@Override
+		public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+			if (actionId==EditorInfo.IME_NULL && event.getAction()==KeyEvent.ACTION_DOWN) {
+				Toast.makeText(FindAHouse.this, "Ghau!", Toast.LENGTH_SHORT).show();
+			}
+			return true;
+		}
+	};
 	TextView textView3;
 	AutoCompleteTextView autoCompleteTextView;
 	ArrayList<String> placeName = new ArrayList<>();
@@ -58,6 +69,6 @@ public class FindAHouse extends AppCompatActivity {
 		autoCompleteTextView.setAdapter(arrayAdapter);
 
 		textView3 = findViewById(R.id.textView17);
-		textView3.setText("ঘাউ");
+		textView3.setOnEditorActionListener(listenerTextView3);
 	}
 }
