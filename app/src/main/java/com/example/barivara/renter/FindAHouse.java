@@ -3,6 +3,7 @@ package com.example.barivara.renter;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FindAHouse extends AppCompatActivity {
 	AutoCompleteTextView autoCompleteTextView;
+	TextView textView1 = findViewById(R.id.textView10);
 	ArrayList<String> placeName = new ArrayList<>();
 
 	@Override
@@ -50,9 +52,14 @@ public class FindAHouse extends AppCompatActivity {
 			}
 		});
 
-		autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+		autoCompleteTextView = findViewById(R.id.autoCompleteTextView); //TODO Declare this globally, perhaps?
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,placeName);
 		autoCompleteTextView.setThreshold(1);
 		autoCompleteTextView.setAdapter(arrayAdapter);
+		//Toast.makeText(this, "before here", Toast.LENGTH_SHORT).show();
+		/*if (placeName.size()>0) {
+			Toast.makeText(this, "here", Toast.LENGTH_SHORT).show();
+			textView1.setText(placeName.get(0));
+		}*/
 	}
 }
