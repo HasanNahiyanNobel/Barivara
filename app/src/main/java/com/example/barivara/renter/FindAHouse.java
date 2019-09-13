@@ -3,6 +3,7 @@ package com.example.barivara.renter;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FindAHouse extends AppCompatActivity {
+	TextView textView3;
 	AutoCompleteTextView autoCompleteTextView;
 	ArrayList<String> placeName = new ArrayList<>();
 
@@ -54,5 +56,8 @@ public class FindAHouse extends AppCompatActivity {
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,placeName);
 		autoCompleteTextView.setThreshold(1);
 		autoCompleteTextView.setAdapter(arrayAdapter);
+
+		textView3 = findViewById(R.id.textView17);
+		textView3.setText("ঘাউ");
 	}
 }
