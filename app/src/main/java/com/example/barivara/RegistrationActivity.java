@@ -50,6 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
 		emailEditText = findViewById(R.id.editText7);
 		passwordEditText = findViewById(R.id.editText8);
 
+		//TODO Handle empty post requests here.
 		new HTTPAsyncTask().execute(getString(R.string.server_and_port)+getString(R.string.server_user_data));
 
 		Toast.makeText(this, getString(R.string.registration_successful_toast), Toast.LENGTH_SHORT).show();
