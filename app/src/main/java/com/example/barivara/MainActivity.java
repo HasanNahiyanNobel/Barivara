@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
@@ -28,14 +27,6 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
-
-		//Set default font
-		CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-				.setDefaultFontPath("fonts/kalpurush.ttf")
-				.setFontAttrId(R.attr.fontPath)
-				.build()
-		);
-
 		setContentView(R.layout.activity_main);
 	}
 
