@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class HomeActivity extends AppCompatActivity {
-	//TODO Expand these linear layouts horizontally.
 	int backButtonCount;
 
 	@Override

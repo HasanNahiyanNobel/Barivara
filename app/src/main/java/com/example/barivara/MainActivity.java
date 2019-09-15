@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
 	public void login(View view) {
 		emailEditText = findViewById(R.id.editText2);
 		passwordEditText = findViewById(R.id.editText3);
-		/*Toast.makeText(this, emailEditText.getText(), Toast.LENGTH_SHORT).show();
-		Toast.makeText(this, passwordEditText.getText(), Toast.LENGTH_SHORT).show();*/
 
 		Intent intent = new Intent(this, RegistrationActivity.class);
 		startActivity(intent);
