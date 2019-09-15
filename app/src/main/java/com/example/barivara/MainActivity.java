@@ -66,12 +66,17 @@ public class MainActivity extends AppCompatActivity {
 
 		if (isASuccessfulLogin(emailEditText.getText().toString(), passwordEditText.getText().toString())) {
 			Toast.makeText(this, getString(R.string.welcome_toast), Toast.LENGTH_SHORT).show();
-			Intent intent = new Intent(this, RegistrationActivity.class);
+			Intent intent = new Intent(this, HomeActivity.class);
 			startActivity(intent);
 		}
 		else {
 			Toast.makeText(this, getString(R.string.login_failed_toast), Toast.LENGTH_SHORT).show();
 		}
+	}
+
+	public void registration(View view) {
+		Intent intent = new Intent(this, RegistrationActivity.class);
+		startActivity(intent);
 	}
 
 	private boolean isASuccessfulLogin(String email, String password) {
