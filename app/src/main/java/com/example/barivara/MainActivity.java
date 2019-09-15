@@ -1,5 +1,6 @@
 package com.example.barivara;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * This is the login activity. Don't know why, refactoring it's name causes problem.
@@ -16,6 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
 	EditText emailEditText, passwordEditText;
+
+	@Override
+	protected void attachBaseContext(Context newBase) {
+		super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
