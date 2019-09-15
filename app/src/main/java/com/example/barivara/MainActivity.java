@@ -43,27 +43,7 @@ public class MainActivity extends AppCompatActivity {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		Retrofit.Builder builder = new Retrofit.Builder()
-				.baseUrl(getString(R.string.server_and_port))
-				.addConverterFactory(GsonConverterFactory.create());
-		Retrofit retrofit = builder.build();
-		UserClient userClient = retrofit.create(UserClient.class);
-		Call<List<User>> userListCall = userClient.userAll();
-		userListCall.enqueue(new Callback<List<User>>() {
-			@Override
-			public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-				List<User> userList = response.body();
-				for(User user : userList){
-					userEmailData.add(user.getEmail());
-					userPasswordData.add(user.getPassword());
-				}
-			}
-			@Override
-			public void onFailure(Call<List<User>> call, Throwable t) {
-				Toast.makeText(MainActivity.this, getString(R.string.connection_failure_toast), Toast.LENGTH_SHORT).show();
-			}
-		});
+		getAllUserData();
 	}
 
 	@Override
@@ -84,28 +64,45 @@ public class MainActivity extends AppCompatActivity {
 		emailEditText = findViewById(R.id.emailEditText);
 		passwordEditText = findViewById(R.id.passwordEditText);
 
-		isASuccessfulLogin(emailEditText.toString(), passwordEditText.getText().toString());
-
-		/*if (isASuccessfulLogin(emailEditText.toString(), passwordEditText.getText().toString())) {
-			Toast.makeText(this, "লগইন ঠিক আছে", Toast.LENGTH_SHORT).show();
+		if (isASuccessfulLogin(emailEditText.getText().toString(), passwordEditText.getText().toString())) {
+			Toast.makeText(this, getString(R.string.welcome_toast), Toast.LENGTH_SHORT).show();
 			Intent intent = new Intent(this, RegistrationActivity.class);
 			startActivity(intent);
 		}
 		else {
-			Toast.makeText(this, "পাসওয়ার্ড বা ইমেইল টাইপ করতে ভুল হয়েছে!", Toast.LENGTH_SHORT).show();
-		}*/
+			Toast.makeText(this, getString(R.string.login_failed_toast), Toast.LENGTH_SHORT).show();
+		}
 	}
 
 	private boolean isASuccessfulLogin(String email, String password) {
-		//Check whether email address matches password.
-		if (userEmailData.size()>0) {
-			Toast.makeText(MainActivity.this, userEmailData.get(0) + ", " + userEmailData.size(), Toast.LENGTH_SHORT).show();
-		}
-		/*for (int i=0; i<userEmailData.size(); i++) {
-			if (email.equals(userEmailData.get(i)) && password.equals(userEmailData.get(i))) {
+		for (int i=0; i<userEmailData.size(); i++) {
+			if (email.equals(userEmailData.get(i)) && password.equals(userPasswordData.get(i))) {
 				return true;
 			}
-		}*/
+		}
 		return false;
+	}
+
+	private void getAllUserData() {
+		Retrofit.Builder builder = new Retrofit.Builder()
+				.baseUrl(getString(R.string.server_and_port))
+				.addConverterFactory(GsonConverterFactory.create());
+		Retrofit retrofit = builder.build();
+		UserClient userClient = retrofit.create(UserClient.class);
+		Call<List<User>> userListCall = userClient.userAll();
+		userListCall.enqueue(new Callback<List<User>>() {
+			@Override
+			public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+				List<User> userList = response.body();
+				for(User user : userList){
+					userEmailData.add(user.getEmail());
+					userPasswordData.add(user.getPassword());
+				}
+			}
+			@Override
+			public void onFailure(Call<List<User>> call, Throwable t) {
+				Toast.makeText(MainActivity.this, getString(R.string.connection_failure_toast), Toast.LENGTH_SHORT).show();
+			}
+		});
 	}
 }
