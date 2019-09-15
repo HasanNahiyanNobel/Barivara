@@ -1,5 +1,6 @@
 package com.example.barivara.landlord;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class HouseAddress extends AppCompatActivity {
 	AutoCompleteTextView actvDistricts, actvUpazila, actvArea;
 
@@ -28,6 +31,11 @@ public class HouseAddress extends AppCompatActivity {
 	private ArrayList<String> nameOfUpazilas = new ArrayList<String>();
 
 	private ArrayList<String> nameOfAreas = new ArrayList<String>();
+
+	@Override
+	protected void attachBaseContext(Context newBase) {
+		super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
