@@ -1,11 +1,15 @@
 package com.example.barivara;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * This is the login activity. Don't know why, refactoring it's name causes problem.
@@ -16,9 +20,22 @@ public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
 
 	@Override
+	protected void attachBaseContext(Context newBase) {
+		super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+	}
+
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
+
+		//Set default font
+		CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+				.setDefaultFontPath("fonts/kalpurush.ttf")
+				.setFontAttrId(R.attr.fontPath)
+				.build()
+		);
+
 		setContentView(R.layout.activity_main);
 	}
 
