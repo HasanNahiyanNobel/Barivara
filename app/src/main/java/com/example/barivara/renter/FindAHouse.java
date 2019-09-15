@@ -47,13 +47,12 @@ public class FindAHouse extends AppCompatActivity {
 			public void onResponse(Call<List<House>> call, Response<List<House>> response) {
 				List<House> houseList = response.body();
 				for(House house : houseList){
-					//Toast.makeText(FindAHouse.this, house.getElaka(), Toast.LENGTH_SHORT).show();
 					placeName.add(house.getElaka()+" ("+house.getUpazilla()+", "+house.getZilla()+")");
 				}
 			}
 			@Override
 			public void onFailure(Call<List<House>> call, Throwable t) {
-				Toast.makeText(FindAHouse.this, "error :(", Toast.LENGTH_SHORT).show();
+				Toast.makeText(FindAHouse.this, getString(R.string.connection_failure_toast), Toast.LENGTH_SHORT).show();
 			}
 		});
 

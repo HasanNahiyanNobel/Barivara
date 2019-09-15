@@ -3,9 +3,9 @@ package com.example.barivara.api;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.POST;
+import retrofit2.http.GET;
 
 public interface UserClient {
-	@POST("/users-list/")
+	@GET("/users-list/")
 	Call<List<User>> userAll();
 }
