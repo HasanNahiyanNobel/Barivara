@@ -13,7 +13,7 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme"
-		android:name=".App">
+		android:name=".DefaultFontApp">
 		<activity android:name=".RegistrationActivity"></activity>
 		<activity android:name=".HomeActivity" />
 		<activity android:name=".landlord.MyHouses" />
