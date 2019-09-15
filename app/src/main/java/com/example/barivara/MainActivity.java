@@ -9,6 +9,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.barivara.api.User;
+import com.example.barivara.api.UserClient;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
@@ -19,6 +30,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
 	EditText emailEditText, passwordEditText;
+	ArrayList<String> userEmailData = new ArrayList<>();
+	ArrayList<String> userPasswordData = new ArrayList<>();
 
 	@Override
 	protected void attachBaseContext(Context newBase) {
@@ -47,10 +60,49 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void login(View view) {
-		emailEditText = findViewById(R.id.editText2);
-		passwordEditText = findViewById(R.id.editText3);
+		emailEditText = findViewById(R.id.emailEditText);
+		passwordEditText = findViewById(R.id.passwordEditText);
 
-		Intent intent = new Intent(this, RegistrationActivity.class);
-		startActivity(intent);
+		if (isASuccessfulLogin(emailEditText.toString(), passwordEditText.getText().toString())) {
+			Toast.makeText(this, "লগইন ঠিক আছে", Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent(this, RegistrationActivity.class);
+			startActivity(intent);
+		}
+		else {
+			Toast.makeText(this, "পাসওয়ার্ড বা ইমেইল টাইপ করতে ভুল হয়েছে!", Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	private boolean isASuccessfulLogin(String email, String password) {
+		Retrofit.Builder builder = new Retrofit.Builder()
+				.baseUrl(getString(R.string.server_and_port))
+				.addConverterFactory(GsonConverterFactory.create());
+		Retrofit retrofit = builder.build();
+
+		UserClient userClient = retrofit.create(UserClient.class);
+		Call<List<User>> userListCall = userClient.userAll();
+
+		userListCall.enqueue(new Callback<List<User>>() {
+			@Override
+			public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+				List<User> userList = response.body();
+				for(User user : userList){
+					userEmailData.add(user.getEmail());
+					userPasswordData.add(user.getPassword());
+				}
+			}
+			@Override
+			public void onFailure(Call<List<User>> call, Throwable t) {
+				Toast.makeText(MainActivity.this, getString(R.string.connection_failure_toast), Toast.LENGTH_SHORT).show();
+			}
+		});
+
+		//Check whether email address matches password.
+		for (int i=0; i<userEmailData.size(); i++) {
+			if (email.equals(userEmailData.get(i)) && password.equals(userEmailData.get(i))) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

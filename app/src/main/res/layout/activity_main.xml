@@ -8,7 +8,7 @@
 	tools:context=".MainActivity">
 
 	<Button
-		android:id="@+id/button4"
+		android:id="@+id/loginButton"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="16dp"
@@ -20,10 +20,10 @@
 		android:text="@string/login_button"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/editText3" />
+		app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
 	<EditText
-		android:id="@+id/editText2"
+		android:id="@+id/emailEditText"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="16dp"
@@ -39,7 +39,7 @@
 		app:layout_constraintTop_toTopOf="parent" />
 
 	<EditText
-		android:id="@+id/editText3"
+		android:id="@+id/passwordEditText"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="16dp"
@@ -52,5 +52,5 @@
 		android:inputType="textPassword"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/editText2" />
+		app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
