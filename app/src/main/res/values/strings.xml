@@ -1,5 +1,6 @@
 <resources>
 	<string name="server_and_port">http://192.168.0.109:8000/</string>
+	<string name="server_user_data">users/</string>
 
 	<string name="app_name">Barivara</string>
 	<string name="bariwala">বাড়িওয়ালা</string>
