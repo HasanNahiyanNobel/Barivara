@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class FindAHouse extends AppCompatActivity {
+	TextView textViewHouse1;
 	AutoCompleteTextView autoCompleteTextView;
 	ArrayList<String> placeName = new ArrayList<>();
 
@@ -35,7 +37,18 @@ public class FindAHouse extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_renter_find_a_house);
+		textViewHouse1 = findViewById(R.id.textViewHouse1);
+		textViewHouse1.setText("ঘাউ!");
 
+		getListOfHouses();
+
+		autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,placeName);
+		autoCompleteTextView.setThreshold(1);
+		autoCompleteTextView.setAdapter(arrayAdapter);
+	}
+
+	private void getListOfHouses() {
 		Retrofit.Builder builder = new Retrofit.Builder()
 				.baseUrl(getString(R.string.server_and_port))
 				.addConverterFactory(GsonConverterFactory.create());
@@ -55,10 +68,5 @@ public class FindAHouse extends AppCompatActivity {
 				Toast.makeText(FindAHouse.this, getString(R.string.connection_failure_toast), Toast.LENGTH_SHORT).show();
 			}
 		});
-
-		autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
-		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,placeName);
-		autoCompleteTextView.setThreshold(1);
-		autoCompleteTextView.setAdapter(arrayAdapter);
 	}
 }
