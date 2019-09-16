@@ -2,6 +2,9 @@ package com.example.barivara.renter;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
@@ -47,6 +50,18 @@ public class FindAHouse extends AppCompatActivity {
 		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.select_dialog_item, placeNameList);
 		autoCompleteTextView.setThreshold(1);
 		autoCompleteTextView.setAdapter(arrayAdapter);
+
+		autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+				View view = getCurrentFocus();
+				if (view != null) {
+					InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+					inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+					showListOfHouses();
+				}
+			}
+		});
 	}
 
 	private void getListOfHouses() {
@@ -79,5 +94,9 @@ public class FindAHouse extends AppCompatActivity {
 				Toast.makeText(FindAHouse.this, getString(R.string.connection_failure_toast), Toast.LENGTH_SHORT).show();
 			}
 		});
+	}
+
+	private void showListOfHouses() {
+		textViewHouse1.setText("নগর ফিলোমেল");
 	}
 }
