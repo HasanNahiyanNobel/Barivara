@@ -67,9 +67,10 @@ public class FindAHouse extends AppCompatActivity {
 					if (!placeNameList.contains(house.getUpazilla()+", "+house.getZilla())) {
 						placeNameList.add(house.getUpazilla()+", "+house.getZilla());
 					}
-					if (!placeNameList.contains(placeNameList.add(house.getElaka()+" ("+house.getUpazilla()+", "+house.getZilla()+")"))) {
+					if (!placeNameList.contains(house.getElaka()+" ("+house.getUpazilla()+", "+house.getZilla()+")")) {
 						placeNameList.add(house.getElaka() + " (" + house.getUpazilla() + ", " + house.getZilla() + ")");
 					}
+
 					houseArrayList.add(house);
 				}
 			}
