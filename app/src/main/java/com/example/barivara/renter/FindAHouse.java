@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -110,18 +111,25 @@ public class FindAHouse extends AppCompatActivity {
 						+"\n"
 						+houseArrayList.get(i).getElaka()+", "+houseArrayList.get(i).getUpazilla()+", "+houseArrayList.get(i).getZilla());
 				textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(), getString(R.string.default_font_path)));
+				/*textViewTemp.setLayoutParams(new ViewGroup.LayoutParams(
+						ViewGroup.LayoutParams.WRAP_CONTENT,
+						ViewGroup.LayoutParams.WRAP_CONTENT));*/
+
+				Button buttonTemp = new Button(this);
+				buttonTemp.setText(getString(R.string.bistarito));
+				/*buttonTemp.setLayoutParams(new ViewGroup.LayoutParams(
+						ViewGroup.LayoutParams.WRAP_CONTENT,
+						ViewGroup.LayoutParams.WRAP_CONTENT));*/
+
 
 				TableRow tableRowTemp = new TableRow(this);
 				tableRowTemp.setLayoutParams(new TableLayout.LayoutParams(
 						TableLayout.LayoutParams.MATCH_PARENT,
-						TableLayout.LayoutParams.MATCH_PARENT
-				));
+						TableLayout.LayoutParams.WRAP_CONTENT));
 				tableRowTemp.addView(textViewTemp);
+				tableRowTemp.addView(buttonTemp);
 
-				tableInScroll.addView(tableRowTemp, new TableLayout.LayoutParams(
-						TableLayout.LayoutParams.MATCH_PARENT,
-						TableLayout.LayoutParams.MATCH_PARENT
-				));
+				tableInScroll.addView(tableRowTemp);
 			}
 		}
 	}
