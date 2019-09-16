@@ -3,6 +3,7 @@ package com.example.barivara.renter;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
@@ -115,7 +116,7 @@ public class FindAHouse extends AppCompatActivity {
 						ViewGroup.LayoutParams.WRAP_CONTENT,
 						ViewGroup.LayoutParams.WRAP_CONTENT));*/
 
-				Button buttonTemp = new Button(this);
+				Button buttonTemp = new Button(new ContextThemeWrapper(this,R.style.BorderedButton),null,R.style.BorderedButton);
 				buttonTemp.setText(getString(R.string.bistarito));
 				/*buttonTemp.setLayoutParams(new ViewGroup.LayoutParams(
 						ViewGroup.LayoutParams.WRAP_CONTENT,
