@@ -101,20 +101,28 @@ public class FindAHouse extends AppCompatActivity {
 	private void showHousesInSearchedPlace(String placeName) {
 		tableInScroll.removeAllViews();
 
-		TextView textViewTemp = new TextView(this);
-		textViewTemp.setText(placeName);
-		textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(),getString(R.string.default_font_path)));
+		for (int i=0; i<houseArrayList.size(); i++) {
+			if (placeName.equals(houseArrayList.get(i).getZilla())
+			|| placeName.equals(houseArrayList.get(i).getUpazilla()+", "+houseArrayList.get(i).getZilla())
+			|| placeName.equals(houseArrayList.get(i).getElaka()+" ("+houseArrayList.get(i).getUpazilla()+", "+houseArrayList.get(i).getZilla()+")")) {
+				TextView textViewTemp = new TextView(this);
+				textViewTemp.setText(houseArrayList.get(i).getBarivara()
+						+"\n"
+						+houseArrayList.get(i).getElaka()+", "+houseArrayList.get(i).getUpazilla()+", "+houseArrayList.get(i).getZilla());
+				textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(), getString(R.string.default_font_path)));
 
-		TableRow tableRowTemp = new TableRow(this);
-		tableRowTemp.setLayoutParams(new TableLayout.LayoutParams(
-				TableLayout.LayoutParams.MATCH_PARENT,
-				TableLayout.LayoutParams.MATCH_PARENT
-		));
-		tableRowTemp.addView(textViewTemp);
+				TableRow tableRowTemp = new TableRow(this);
+				tableRowTemp.setLayoutParams(new TableLayout.LayoutParams(
+						TableLayout.LayoutParams.MATCH_PARENT,
+						TableLayout.LayoutParams.MATCH_PARENT
+				));
+				tableRowTemp.addView(textViewTemp);
 
-		tableInScroll.addView(tableRowTemp, new TableLayout.LayoutParams(
-				TableLayout.LayoutParams.MATCH_PARENT,
-				TableLayout.LayoutParams.MATCH_PARENT
-		));
+				tableInScroll.addView(tableRowTemp, new TableLayout.LayoutParams(
+						TableLayout.LayoutParams.MATCH_PARENT,
+						TableLayout.LayoutParams.MATCH_PARENT
+				));
+			}
+		}
 	}
 }
