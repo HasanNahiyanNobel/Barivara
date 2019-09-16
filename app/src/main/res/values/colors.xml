@@ -27,6 +27,8 @@
 	<color name="colorPrimary">#70C1B3</color>
 	<color name="colorPrimaryDark">#000000</color>
 	<color name="colorAccent">#FF1654</color>
+	<color name="colorTransparent">#00FFFFFF</color>
+	<color name="colorDebug">#00FF0C</color>
 
 	<color name="lapisLazuli">#247BA0</color>
 	<color name="greenSheen">#70C1B3</color>
