@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
@@ -51,15 +50,15 @@ public class FindAHouse extends AppCompatActivity {
 		autoCompleteTextView.setThreshold(1);
 		autoCompleteTextView.setAdapter(arrayAdapter);
 
-		autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				View view = getCurrentFocus();
-				if (view != null) {
-					InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-					inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-					showListOfHouses();
-				}
+		/**
+		 * Found from https://stackoverflow.com/a/41671078/6606776
+		 */
+		autoCompleteTextView.setOnItemClickListener((arg0, arg1, arg2, arg3) -> {
+			View view = getCurrentFocus();
+			if (view != null) {
+				InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+				inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+				showListOfHouses();
 			}
 		});
 	}
