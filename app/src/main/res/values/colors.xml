@@ -35,4 +35,6 @@
 	<color name="seaFoamGreen">#B2DBBF</color>
 	<color name="veryPaleYellow">#F3FFBD</color>
 	<color name="awesomeRed">#FF1654</color>
+
+	<color name="borderedButtonColor">@color/awesomeRed</color>
 </resources>
