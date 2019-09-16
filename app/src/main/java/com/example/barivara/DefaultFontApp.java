@@ -9,7 +9,7 @@ public class DefaultFontApp extends Application {
 	public void onCreate() {
 		super.onCreate();
 		CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-				.setDefaultFontPath("fonts/kalpurush.ttf")
+				.setDefaultFontPath(getString(R.string.default_font_path))
 				.setFontAttrId(R.attr.fontPath)
 				.build()
 		);

@@ -29,7 +29,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class FindAHouse extends AppCompatActivity {
-	TextView textViewHouse1;
 	TableLayout tableInScroll;
 	AutoCompleteTextView autoCompleteTextView;
 	ArrayList<House> houseArrayList = new ArrayList<>();
@@ -46,8 +45,6 @@ public class FindAHouse extends AppCompatActivity {
 		setContentView(R.layout.activity_renter_find_a_house);
 
 		tableInScroll = findViewById(R.id.tableInScroll);
-		textViewHouse1 = findViewById(R.id.textViewHouse1);
-		textViewHouse1.setText("ঘাউ!");
 
 		getListOfHouses();
 
@@ -103,9 +100,10 @@ public class FindAHouse extends AppCompatActivity {
 
 	private void showHousesInSearchedPlace(String placeName) {
 		tableInScroll.removeAllViews();
+
 		TextView textViewTemp = new TextView(this);
 		textViewTemp.setText(placeName);
-		textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/kalpurush.ttf"));
+		textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(),getString(R.string.default_font_path)));
 
 		TableRow tableRowTemp = new TableRow(this);
 		tableRowTemp.setLayoutParams(new TableLayout.LayoutParams(
