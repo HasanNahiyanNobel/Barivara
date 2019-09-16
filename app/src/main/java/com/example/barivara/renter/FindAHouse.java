@@ -74,7 +74,7 @@ public class FindAHouse extends AppCompatActivity {
 		autoCompleteTextView.setThreshold(1);
 		autoCompleteTextView.setAdapter(arrayAdapter);
 
-		textView3 = findViewById(R.id.textView17);
+		textView3 = findViewById(R.id.textView3);
 		textView3.setOnEditorActionListener(listenerTextView3);
 	}
 }
