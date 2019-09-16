@@ -47,23 +47,6 @@ public class FindAHouse extends AppCompatActivity {
 
 		textViewHouse1 = findViewById(R.id.textViewHouse1);
 		textViewHouse1.setText("ঘাউ!");
-		tableInScroll = findViewById(R.id.tableInScroll);
-
-		TextView textViewTemp = new TextView(this);
-		textViewTemp.setText("নদীর ধারা সাগরপানে ধায়");
-		textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/kalpurush.ttf"));
-
-		TableRow tableRowTemp = new TableRow(this);
-		tableRowTemp.setLayoutParams(new TableLayout.LayoutParams(
-				TableLayout.LayoutParams.MATCH_PARENT,
-				TableLayout.LayoutParams.MATCH_PARENT
-		));
-		tableRowTemp.addView(textViewTemp);
-
-		tableInScroll.addView(tableRowTemp, new TableLayout.LayoutParams(
-				TableLayout.LayoutParams.MATCH_PARENT,
-				TableLayout.LayoutParams.MATCH_PARENT
-		));
 
 		getListOfHouses();
 
@@ -73,14 +56,14 @@ public class FindAHouse extends AppCompatActivity {
 		autoCompleteTextView.setAdapter(arrayAdapter);
 
 		/**
-		 * Found from https://stackoverflow.com/a/41671078/6606776
+		 * Taken from https://stackoverflow.com/a/41671078/6606776
 		 */
 		autoCompleteTextView.setOnItemClickListener((arg0, arg1, arg2, arg3) -> {
 			View view = getCurrentFocus();
 			if (view != null) {
 				InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 				inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-				showListOfHouses();
+				showHousesInSearchedPlace(autoCompleteTextView.getText().toString());
 			}
 		});
 	}
@@ -117,7 +100,25 @@ public class FindAHouse extends AppCompatActivity {
 		});
 	}
 
-	private void showListOfHouses() {
+	private void showHousesInSearchedPlace(String placeName) {
 		textViewHouse1.setText("নগর ফিলোমেল");
+
+		tableInScroll = findViewById(R.id.tableInScroll);
+
+		TextView textViewTemp = new TextView(this);
+		textViewTemp.setText(placeName);
+		textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/kalpurush.ttf"));
+
+		TableRow tableRowTemp = new TableRow(this);
+		tableRowTemp.setLayoutParams(new TableLayout.LayoutParams(
+				TableLayout.LayoutParams.MATCH_PARENT,
+				TableLayout.LayoutParams.MATCH_PARENT
+		));
+		tableRowTemp.addView(textViewTemp);
+
+		tableInScroll.addView(tableRowTemp, new TableLayout.LayoutParams(
+				TableLayout.LayoutParams.MATCH_PARENT,
+				TableLayout.LayoutParams.MATCH_PARENT
+		));
 	}
 }
