@@ -26,7 +26,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class FindAHouse extends AppCompatActivity {
 	TextView textViewHouse1;
 	AutoCompleteTextView autoCompleteTextView;
-	ArrayList<String> placeName = new ArrayList<>();
+	ArrayList<House> houseArrayList = new ArrayList<>();
+	ArrayList<String> placeNameList = new ArrayList<>();
 
 	@Override
 	protected void attachBaseContext(Context newBase) {
@@ -43,7 +44,7 @@ public class FindAHouse extends AppCompatActivity {
 		getListOfHouses();
 
 		autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
-		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,placeName);
+		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.select_dialog_item, placeNameList);
 		autoCompleteTextView.setThreshold(1);
 		autoCompleteTextView.setAdapter(arrayAdapter);
 	}
@@ -60,7 +61,16 @@ public class FindAHouse extends AppCompatActivity {
 			public void onResponse(Call<List<House>> call, Response<List<House>> response) {
 				List<House> houseList = response.body();
 				for(House house : houseList){
-					placeName.add(house.getElaka()+" ("+house.getUpazilla()+", "+house.getZilla()+")");
+					if (!placeNameList.contains(house.getZilla())) {
+						placeNameList.add(house.getZilla());
+					}
+					if (!placeNameList.contains(house.getUpazilla()+", "+house.getZilla())) {
+						placeNameList.add(house.getUpazilla()+", "+house.getZilla());
+					}
+					if (!placeNameList.contains(placeNameList.add(house.getElaka()+" ("+house.getUpazilla()+", "+house.getZilla()+")"))) {
+						placeNameList.add(house.getElaka() + " (" + house.getUpazilla() + ", " + house.getZilla() + ")");
+					}
+					houseArrayList.add(house);
 				}
 			}
 			@Override
