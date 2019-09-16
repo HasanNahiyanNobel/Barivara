@@ -45,6 +45,7 @@ public class FindAHouse extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_renter_find_a_house);
 
+		tableInScroll = findViewById(R.id.tableInScroll);
 		textViewHouse1 = findViewById(R.id.textViewHouse1);
 		textViewHouse1.setText("ঘাউ!");
 
@@ -101,10 +102,7 @@ public class FindAHouse extends AppCompatActivity {
 	}
 
 	private void showHousesInSearchedPlace(String placeName) {
-		textViewHouse1.setText("নগর ফিলোমেল");
-
-		tableInScroll = findViewById(R.id.tableInScroll);
-
+		tableInScroll.removeAllViews();
 		TextView textViewTemp = new TextView(this);
 		textViewTemp.setText(placeName);
 		textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/kalpurush.ttf"));
