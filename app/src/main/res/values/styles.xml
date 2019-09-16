@@ -8,7 +8,7 @@
 
     <style name="ButtonStyle1" parent="@android:style/Widget.Button">
         <item name="android:layout_width">fill_parent</item>
-        <item name="android:background">@color/buttonBackground</item>
+        <item name="android:background">@drawable/button_background</item>
         <item name="android:textColor">@color/buttonText</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
