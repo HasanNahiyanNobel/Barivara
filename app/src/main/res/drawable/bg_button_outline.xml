@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Taken from https://stackoverflow.com/a/45607335/6606776 -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:drawable="@drawable/button_outline" android:state_pressed="true">
+		<shape android:shape="rectangle">
+			<solid android:color="@color/borderedButtonColor"/>
+		</shape>
+	</item>
+	<item android:drawable="@drawable/button_outline" android:state_focused="true">
+		<shape android:shape="rectangle">
+			<solid android:color="@color/borderedButtonColor"/>
+		</shape>
+	</item>
+
+	<item android:drawable="@drawable/button_outline"/>
+
+</selector>
