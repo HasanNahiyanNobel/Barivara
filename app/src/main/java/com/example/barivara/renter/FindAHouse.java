@@ -1,5 +1,6 @@
 package com.example.barivara.renter;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
@@ -22,6 +23,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class FindAHouse extends AppCompatActivity {
 	TextView.OnEditorActionListener listenerTextView3 = new TextView.OnEditorActionListener() {
@@ -36,6 +38,11 @@ public class FindAHouse extends AppCompatActivity {
 	TextView textView3;
 	AutoCompleteTextView autoCompleteTextView;
 	ArrayList<String> placeName = new ArrayList<>();
+
+	@Override
+	protected void attachBaseContext(Context newBase) {
+		super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +60,12 @@ public class FindAHouse extends AppCompatActivity {
 			public void onResponse(Call<List<House>> call, Response<List<House>> response) {
 				List<House> houseList = response.body();
 				for(House house : houseList){
-					//Toast.makeText(FindAHouse.this, house.getElaka(), Toast.LENGTH_SHORT).show();
 					placeName.add(house.getElaka()+" ("+house.getUpazilla()+", "+house.getZilla()+")");
 				}
 			}
 			@Override
 			public void onFailure(Call<List<House>> call, Throwable t) {
-				Toast.makeText(FindAHouse.this, "error :(", Toast.LENGTH_SHORT).show();
+				Toast.makeText(FindAHouse.this, getString(R.string.connection_failure_toast), Toast.LENGTH_SHORT).show();
 			}
 		});
 

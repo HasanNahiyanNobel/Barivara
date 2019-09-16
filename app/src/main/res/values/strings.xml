@@ -1,5 +1,11 @@
 <resources>
 	<string name="server_and_port">http://192.168.0.109:8000/</string>
+	<string name="server_user_data">users/</string>
+
+	<string name="welcome_toast">স্বাগতম!</string>
+	<string name="login_failed_toast">"ভুল ইমেইল বা পাসওয়ার্ড। অনুগ্রহ করে আবার চেষ্টা করুন।"</string>
+	<string name="connection_failure_toast">নেট কানেকশনে কোনো সমস্যা হয়েছে</string>
+	<string name="registration_successful_toast">আপনার রেজিস্ট্রেশন সম্পন্ন হয়েছে</string>
 
 	<string name="app_name">Barivara</string>
 	<string name="bariwala">বাড়িওয়ালা</string>
@@ -21,6 +27,7 @@
 	<string name="login_button">লগইন</string>
 	<string name="registration_button">রেজিস্টার</string>
 	<string name="registration_title">রেজিস্ট্রেশন</string>
+	<string name="othoba">অথবা</string>
 
 	<string name="app_close_toast">আরেকবার চাপলেই বন্ধ হয়ে যাবে!</string>
 

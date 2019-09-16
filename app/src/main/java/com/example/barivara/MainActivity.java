@@ -1,11 +1,26 @@
 package com.example.barivara;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.barivara.api.User;
+import com.example.barivara.api.UserClient;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * This is the login activity. Don't know why, refactoring it's name causes problem.
@@ -14,12 +29,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
+	EditText emailEditText, passwordEditText;
+	ArrayList<String> userEmailData = new ArrayList<>();
+	ArrayList<String> userPasswordData = new ArrayList<>();
+
+	@Override
+	protected void attachBaseContext(Context newBase) {
+		super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		getAllUserData();
 	}
 
 	@Override
@@ -37,7 +61,53 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void login(View view) {
+		emailEditText = findViewById(R.id.emailEditText);
+		passwordEditText = findViewById(R.id.passwordEditText);
+
+		if (isASuccessfulLogin(emailEditText.getText().toString(), passwordEditText.getText().toString())) {
+			Toast.makeText(this, getString(R.string.welcome_toast), Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent(this, HomeActivity.class);
+			startActivity(intent);
+		}
+		else {
+			Toast.makeText(this, getString(R.string.login_failed_toast), Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	public void registration(View view) {
 		Intent intent = new Intent(this, RegistrationActivity.class);
 		startActivity(intent);
+	}
+
+	private boolean isASuccessfulLogin(String email, String password) {
+		for (int i=0; i<userEmailData.size(); i++) {
+			if (email.equals(userEmailData.get(i)) && password.equals(userPasswordData.get(i))) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private void getAllUserData() {
+		Retrofit.Builder builder = new Retrofit.Builder()
+				.baseUrl(getString(R.string.server_and_port))
+				.addConverterFactory(GsonConverterFactory.create());
+		Retrofit retrofit = builder.build();
+		UserClient userClient = retrofit.create(UserClient.class);
+		Call<List<User>> userListCall = userClient.userAll();
+		userListCall.enqueue(new Callback<List<User>>() {
+			@Override
+			public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+				List<User> userList = response.body();
+				for(User user : userList){
+					userEmailData.add(user.getEmail());
+					userPasswordData.add(user.getPassword());
+				}
+			}
+			@Override
+			public void onFailure(Call<List<User>> call, Throwable t) {
+				Toast.makeText(MainActivity.this, getString(R.string.connection_failure_toast), Toast.LENGTH_SHORT).show();
+			}
+		});
 	}
 }
