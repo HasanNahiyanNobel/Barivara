@@ -1,11 +1,14 @@
 package com.example.barivara.renter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +30,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class FindAHouse extends AppCompatActivity {
 	TextView textViewHouse1;
+	TableLayout tableInScroll;
 	AutoCompleteTextView autoCompleteTextView;
 	ArrayList<House> houseArrayList = new ArrayList<>();
 	ArrayList<String> placeNameList = new ArrayList<>();
@@ -40,8 +44,26 @@ public class FindAHouse extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_renter_find_a_house);
+
 		textViewHouse1 = findViewById(R.id.textViewHouse1);
 		textViewHouse1.setText("ঘাউ!");
+		tableInScroll = findViewById(R.id.tableInScroll);
+
+		TextView textViewTemp = new TextView(this);
+		textViewTemp.setText("নদীর ধারা সাগরপানে ধায়");
+		textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(),"fonts/kalpurush.ttf"));
+
+		TableRow tableRowTemp = new TableRow(this);
+		tableRowTemp.setLayoutParams(new TableLayout.LayoutParams(
+				TableLayout.LayoutParams.MATCH_PARENT,
+				TableLayout.LayoutParams.MATCH_PARENT
+		));
+		tableRowTemp.addView(textViewTemp);
+
+		tableInScroll.addView(tableRowTemp, new TableLayout.LayoutParams(
+				TableLayout.LayoutParams.MATCH_PARENT,
+				TableLayout.LayoutParams.MATCH_PARENT
+		));
 
 		getListOfHouses();
 
