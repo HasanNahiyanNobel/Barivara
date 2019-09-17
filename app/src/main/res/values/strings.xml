@@ -28,6 +28,7 @@
 	<string name="prompt_email">ইমেইল</string>
 	<string name="prompt_password">পাসওয়ার্ড</string>
 	<string name="login_button">লগইন</string>
+	<string name="logout_button">লগ আউট</string>
 	<string name="registration_button">রেজিস্টার</string>
 	<string name="registration_title">রেজিস্ট্রেশন</string>
 	<string name="othoba">অথবা</string>

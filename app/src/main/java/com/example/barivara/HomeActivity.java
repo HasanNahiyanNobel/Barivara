@@ -2,6 +2,7 @@ package com.example.barivara;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -39,12 +40,20 @@ public class HomeActivity extends AppCompatActivity {
 		}
 	}
 
-	public void goToLandlordMain (View view) {
+	public void logout(View view) {
+		SharedPreferences logoutSharedPreferences = getSharedPreferences("login",Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = logoutSharedPreferences.edit();
+		editor.clear();
+		editor.commit();
+		finish();
+	}
+
+	public void goToLandlordMain(View view) {
 		Intent intent = new Intent(this, com.example.barivara.landlord.MainPage.class);
 		startActivity(intent);
 	}
 
-	public void goToRenterMain (View view) {
+	public void goToRenterMain(View view) {
 		Intent intent = new Intent(this, com.example.barivara.renter.MainPage.class);
 		startActivity(intent);
 	}
