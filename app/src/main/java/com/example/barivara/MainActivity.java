@@ -2,6 +2,7 @@ package com.example.barivara;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -29,7 +30,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
-	EditText emailEditText, passwordEditText;
+	SharedPreferences sharedPreferences;
+	EditText userEmail, userPassword;
+	int userID;
 	ArrayList<String> userEmailData = new ArrayList<>();
 	ArrayList<String> userPasswordData = new ArrayList<>();
 
@@ -43,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		sharedPreferences = getSharedPreferences("login",MODE_PRIVATE);
+		if (sharedPreferences.getBoolean("logged",false)) {
+			Intent intent = new Intent(this, HomeActivity.class);
+			startActivity(intent);
+		}
+
 		getAllUserData();
 	}
 
@@ -61,11 +71,13 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void login(View view) {
-		emailEditText = findViewById(R.id.emailEditText);
-		passwordEditText = findViewById(R.id.passwordEditText);
+		userEmail = findViewById(R.id.emailEditText);
+		userPassword = findViewById(R.id.passwordEditText);
 
-		if (isASuccessfulLogin(emailEditText.getText().toString(), passwordEditText.getText().toString())) {
+		if (isASuccessfulLogin(userEmail.getText().toString(), userPassword.getText().toString())) {
 			Toast.makeText(this, getString(R.string.welcome_toast), Toast.LENGTH_SHORT).show();
+			sharedPreferences.edit().putBoolean("logged",true).apply();
+			sharedPreferences.edit().putInt("userID",userID).apply();
 			Intent intent = new Intent(this, HomeActivity.class);
 			startActivity(intent);
 		}
@@ -82,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 	private boolean isASuccessfulLogin(String email, String password) {
 		for (int i=0; i<userEmailData.size(); i++) {
 			if (email.equals(userEmailData.get(i)) && password.equals(userPasswordData.get(i))) {
+				userID = i+1;
 				return true;
 			}
 		}
