@@ -49,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
 		sharedPreferences = getSharedPreferences("login",MODE_PRIVATE);
 		if (sharedPreferences.getBoolean("logged",false)) {
-			int tempUserID = sharedPreferences.getInt("userID",-1);
-			String tempString = String.valueOf(tempUserID);
-			Toast.makeText(this, tempString, Toast.LENGTH_SHORT).show();
 			Intent intent = new Intent(this, HomeActivity.class);
 			startActivity(intent);
 		}
