@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -107,17 +106,13 @@ public class FindAHouse extends AppCompatActivity {
 			|| placeName.equals(houseArrayList.get(i).getUpazilla()+", "+houseArrayList.get(i).getZilla())
 			|| placeName.equals(houseArrayList.get(i).getElaka()+" ("+houseArrayList.get(i).getUpazilla()+", "+houseArrayList.get(i).getZilla()+")")) {
 				TextView textViewTemp = new TextView(this);
-				textViewTemp.setText(houseArrayList.get(i).getBarivara()
+				textViewTemp.setText(getString(R.string.vara)+": "+houseArrayList.get(i).getBarivara()
 						+"\n"
-						+houseArrayList.get(i).getElaka()+", "+houseArrayList.get(i).getUpazilla()+", "+houseArrayList.get(i).getZilla());
+						+houseArrayList.get(i).getElaka()+", "+houseArrayList.get(i).getUpazilla()+", "+houseArrayList.get(i).getZilla()
+						+"\n");
 				textViewTemp.setTypeface(Typeface.createFromAsset(getAssets(), getString(R.string.default_font_path)));
+				textViewTemp.setTextSize(18);
 				/*textViewTemp.setLayoutParams(new ViewGroup.LayoutParams(
-						ViewGroup.LayoutParams.WRAP_CONTENT,
-						ViewGroup.LayoutParams.WRAP_CONTENT));*/
-
-				Button buttonTemp = new Button(this);
-				buttonTemp.setText(getString(R.string.bistarito));
-				/*buttonTemp.setLayoutParams(new ViewGroup.LayoutParams(
 						ViewGroup.LayoutParams.WRAP_CONTENT,
 						ViewGroup.LayoutParams.WRAP_CONTENT));*/
 
@@ -127,7 +122,6 @@ public class FindAHouse extends AppCompatActivity {
 						TableLayout.LayoutParams.MATCH_PARENT,
 						TableLayout.LayoutParams.WRAP_CONTENT));
 				tableRowTemp.addView(textViewTemp);
-				tableRowTemp.addView(buttonTemp);
 
 				tableInScroll.addView(tableRowTemp);
 			}
