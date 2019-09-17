@@ -46,6 +46,8 @@ public class HomeActivity extends AppCompatActivity {
 		editor.clear();
 		editor.commit();
 		finish();
+		Intent intent = new Intent(this,MainActivity.class);
+		startActivity(intent);
 	}
 
 	public void goToLandlordMain(View view) {
