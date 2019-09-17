@@ -2,6 +2,7 @@ package com.example.barivara;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
+	SharedPreferences sharedPreferences;
 	EditText emailEditText, passwordEditText;
 	ArrayList<String> userEmailData = new ArrayList<>();
 	ArrayList<String> userPasswordData = new ArrayList<>();
@@ -43,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
 		backButtonCount = 0;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		sharedPreferences = getSharedPreferences("login",MODE_PRIVATE);
+		if (sharedPreferences.getBoolean("logged",false)) {
+			Intent intent = new Intent(this, HomeActivity.class);
+			startActivity(intent);
+		}
+
 		getAllUserData();
 	}
 
@@ -66,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
 		if (isASuccessfulLogin(emailEditText.getText().toString(), passwordEditText.getText().toString())) {
 			Toast.makeText(this, getString(R.string.welcome_toast), Toast.LENGTH_SHORT).show();
+			sharedPreferences.edit().putBoolean("logged",true).apply();
 			Intent intent = new Intent(this, HomeActivity.class);
 			startActivity(intent);
 		}
