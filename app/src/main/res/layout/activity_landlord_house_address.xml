@@ -28,7 +28,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginBottom="8dp"
 		android:clickable="true"
-		android:onClick="showDropdownOfDistricts"
+		android:onClick="showDropdownOfZillas"
 		app:layout_constraintBottom_toBottomOf="@+id/autoCompleteTextView1"
 		app:layout_constraintEnd_toEndOf="@+id/autoCompleteTextView1"
 		app:srcCompat="@drawable/ic_baseline_arrow_dropdown_1" />
@@ -80,7 +80,7 @@
 		android:layout_height="wrap_content"
 		android:layout_marginBottom="8dp"
 		android:clickable="true"
-		android:onClick="showDropdownOfAreas"
+		android:onClick="showDropdownOfElakas"
 		app:layout_constraintBottom_toBottomOf="@+id/autoCompleteTextView3"
 		app:layout_constraintEnd_toEndOf="@+id/autoCompleteTextView3"
 		app:srcCompat="@drawable/ic_baseline_arrow_dropdown_1" />
