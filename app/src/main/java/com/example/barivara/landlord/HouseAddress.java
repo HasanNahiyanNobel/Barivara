@@ -30,7 +30,7 @@ public class HouseAddress extends AppCompatActivity {
 
 	AutoCompleteTextView actvZillas, actvUpazila, actvElaka;
 
-	public House newHouse = new House();
+	public static House newHouse = new House();
 
 	private ArrayList<String> nameOfZillas = new ArrayList<>();
 	private ArrayList<String> nameOfUpazilas = new ArrayList<>();
