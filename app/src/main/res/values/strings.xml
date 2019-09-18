@@ -67,4 +67,7 @@
 	<string name="basharThikana">বাসার ঠিকানা</string>
 
 	<string name="place_search_hint">জায়গার নাম</string>
+
+	<string name="toggle_button_family_basha">ফ্যামিলি বাসা</string>
+	<string name="toggle_button_mess">মেস</string>
 </resources>
