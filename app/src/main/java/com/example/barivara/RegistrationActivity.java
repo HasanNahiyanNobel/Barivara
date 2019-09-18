@@ -50,13 +50,19 @@ public class RegistrationActivity extends AppCompatActivity {
 		emailEditText = findViewById(R.id.editText7);
 		passwordEditText = findViewById(R.id.editText8);
 
-		//TODO Handle empty post requests here.
-		new HTTPAsyncTask().execute(getString(R.string.server_and_port)+getString(R.string.server_user_data));
+		if (nameEditText.getText().toString().isEmpty()
+		|| emailEditText.getText().toString().isEmpty()
+		|| passwordEditText.getText().toString().isEmpty()) {
+			Toast.makeText(this, getString(R.string.registration_unsuccessful_toast), Toast.LENGTH_SHORT).show();
+		}
+		else {
+			new HTTPAsyncTask().execute(getString(R.string.server_and_port) + getString(R.string.server_user_data));
 
-		Toast.makeText(this, getString(R.string.registration_successful_toast), Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getString(R.string.registration_successful_toast), Toast.LENGTH_SHORT).show();
 
-		Intent intent = new Intent(this, HomeActivity.class);
-		startActivity(intent);
+			Intent intent = new Intent(this, MainActivity.class);
+			startActivity(intent);
+		}
 	}
 
 	private class HTTPAsyncTask extends AsyncTask<String, Void, String> {
