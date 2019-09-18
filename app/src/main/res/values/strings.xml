@@ -1,6 +1,7 @@
 <resources>
-	<string name="server_and_port">http://192.168.0.101:8000/</string>
+	<string name="server_and_port">http://192.168.0.105:8000/</string>
 	<string name="server_user_data">users/</string>
+	<string name="server_house_data">houses/</string>
 
 	<string name="default_font_path">fonts/kalpurush.ttf</string>
 
@@ -67,4 +68,7 @@
 	<string name="basharThikana">বাসার ঠিকানা</string>
 
 	<string name="place_search_hint">জায়গার নাম</string>
+
+	<string name="toggle_button_family_basha">ফ্যামিলি বাসা</string>
+	<string name="toggle_button_mess">মেস</string>
 </resources>

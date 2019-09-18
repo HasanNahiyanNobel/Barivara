@@ -13,6 +13,8 @@ public class House {
 	private boolean rannaghor;
 	private int barivara;
 
+	public House() {}
+
 	public House(String bariwalar_nam, int bariwalar_reg_id, String zilla, String upazilla, String elaka, boolean family_basha, int shobar_ghorer_shongkhya, int bathroomer_shongkhya, boolean khabar_ghor, boolean rannaghor, int barivara) {
 		this.bariwalar_nam = bariwalar_nam;
 		this.bariwalar_reg_id = bariwalar_reg_id;
