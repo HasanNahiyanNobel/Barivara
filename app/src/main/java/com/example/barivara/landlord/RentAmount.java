@@ -97,9 +97,17 @@ public class RentAmount extends AppCompatActivity {
 
 	private JSONObject buildJsonObject() throws JSONException {
 		JSONObject jsonObject = new JSONObject();
-		jsonObject.accumulate("name", nameEditText.getText().toString());
-		jsonObject.accumulate("email",  emailEditText.getText().toString());
-		jsonObject.accumulate("password",  passwordEditText.getText().toString());
+		jsonObject.accumulate("bariwalar_nam", HouseAddress.newHouse.getBariwalar_nam());
+		jsonObject.accumulate("bariwalar_reg_id", HouseAddress.newHouse.getBariwalar_reg_id());
+		jsonObject.accumulate("zilla", HouseAddress.newHouse.getZilla());
+		jsonObject.accumulate("upazilla", HouseAddress.newHouse.getUpazilla());
+		jsonObject.accumulate("elaka", HouseAddress.newHouse.getElaka());
+		jsonObject.accumulate("family_basha", HouseAddress.newHouse.isFamily_basha());
+		jsonObject.accumulate("shobar_ghorer_shongkhya", HouseAddress.newHouse.getShobar_ghorer_shongkhya());
+		jsonObject.accumulate("bathroomer_shongkhya", HouseAddress.newHouse.getBathroomer_shongkhya());
+		jsonObject.accumulate("khabar_ghor", HouseAddress.newHouse.isKhabar_ghor());
+		jsonObject.accumulate("rannaghor", HouseAddress.newHouse.isRannaghor());
+		jsonObject.accumulate("barivara", HouseAddress.newHouse.getBarivara());
 		return jsonObject;
 	}
 
