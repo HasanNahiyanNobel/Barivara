@@ -32,8 +32,8 @@ public class MainPage extends AppCompatActivity {
 	}
 
 	public void goToMyHouses(View view) {
-		Intent intent = new Intent(this,MyHouses.class);
-		startActivity(intent);
+		/*Intent intent = new Intent(this,MyHouses.class);
+		startActivity(intent);*/
 	}
 
 	public void addANewHouse (View view) {
