@@ -10,7 +10,8 @@
 	<string name="login_failed_toast">"ভুল ইমেইল বা পাসওয়ার্ড। অনুগ্রহ করে আবার চেষ্টা করুন।"</string>
 	<string name="connection_failure_toast">নেট কানেকশনে কোনো সমস্যা হয়েছে</string>
 	<string name="registration_successful_toast">আপনার রেজিস্ট্রেশন সম্পন্ন হয়েছে</string>
-	<string name="registration_unsuccessful_toast">দয়া করে সবগুলো ঘর পূর্ণ করুন!</string>
+	<string name="not_filled_field_toast">দয়া করে সবগুলো ঘর পূর্ণ করুন!</string>
+	<string name="add_house_successful_toast">আপনার বাসাটি আমাদের তালিকায় যুক্ত হয়েছে</string>
 
 	<string name="app_name">Barivara</string>
 	<string name="bariwala">বাড়িওয়ালা</string>

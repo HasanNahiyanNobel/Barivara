@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -47,6 +48,8 @@ public class RentAmount extends AppCompatActivity {
 		HouseAddress.newHouse.setBarivara(Integer.parseInt(barivataEditText.getText().toString()));
 
 		new HTTPAsyncTask().execute(getString(R.string.server_and_port)+getString(R.string.server_house_data));
+
+		Toast.makeText(this, getString(R.string.add_house_successful_toast), Toast.LENGTH_SHORT).show();
 
 		Intent intent = new Intent(this, MainPage.class);
 		startActivity(intent);

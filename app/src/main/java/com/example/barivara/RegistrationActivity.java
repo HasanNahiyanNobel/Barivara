@@ -53,7 +53,7 @@ public class RegistrationActivity extends AppCompatActivity {
 		if (nameEditText.getText().toString().isEmpty()
 		|| emailEditText.getText().toString().isEmpty()
 		|| passwordEditText.getText().toString().isEmpty()) {
-			Toast.makeText(this, getString(R.string.registration_unsuccessful_toast), Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getString(R.string.not_filled_field_toast), Toast.LENGTH_SHORT).show();
 		}
 		else {
 			new HTTPAsyncTask().execute(getString(R.string.server_and_port) + getString(R.string.server_user_data));
