@@ -116,6 +116,7 @@ public class HouseAddress extends AppCompatActivity {
 
 	public void goToHouseAttributes(View view) {
 		newHouse.setBariwalar_reg_id(sharedPreferences.getInt("userID",-1));
+		newHouse.setBariwalar_nam(sharedPreferences.getString("userName",""));
 		newHouse.setZilla(actvZillas.getText().toString());
 		newHouse.setUpazilla(actvUpazila.getText().toString());
 		newHouse.setElaka(actvElaka.getText().toString());

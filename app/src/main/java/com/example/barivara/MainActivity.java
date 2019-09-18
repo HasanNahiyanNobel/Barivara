@@ -32,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
 	int backButtonCount;
 	SharedPreferences sharedPreferences;
 	EditText userEmail, userPassword;
+	String userName;
 	int userID;
 	ArrayList<String> userEmailData = new ArrayList<>();
 	ArrayList<String> userPasswordData = new ArrayList<>();
+	ArrayList<String> userNameData = new ArrayList<>();
 
 	@Override
 	protected void attachBaseContext(Context newBase) {
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 			Toast.makeText(this, getString(R.string.welcome_toast), Toast.LENGTH_SHORT).show();
 			sharedPreferences.edit().putBoolean("logged",true).apply();
 			sharedPreferences.edit().putInt("userID",userID).apply();
+			sharedPreferences.edit().putString("userName",userName).apply();
 			Intent intent = new Intent(this, HomeActivity.class);
 			startActivity(intent);
 		}
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 		for (int i=0; i<userEmailData.size(); i++) {
 			if (email.equals(userEmailData.get(i)) && password.equals(userPasswordData.get(i))) {
 				userID = i+1;
+				userName = userNameData.get(i);
 				return true;
 			}
 		}
@@ -115,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 				for(User user : userList){
 					userEmailData.add(user.getEmail());
 					userPasswordData.add(user.getPassword());
+					userNameData.add(user.getName());
 				}
 			}
 			@Override
